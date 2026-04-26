@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La People Habla — Edición 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f0e8;
+    --yellow: #FFE228;
+    --blue: #2B5BFF;
+    --red: #FF3131;
+    --purple: #8B2FFF;
+    --coral: #FF6B47;
+    --mint: #00E5A0;
+    --pink: #FF3CAC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Instrument Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── PORTADA ──────────────────────────────── */
+  .cover {
+    min-height: 100vh;
+    background: var(--black);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1;
+  }
+
+  .cover-top-bar {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+
+  .cover-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 120px);
+    z-index: 5;
+    position: relative;
+  }
+
+  .cover-left {
+    padding: 60px 40px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 3px solid var(--yellow);
+  }
+
+  .cover-logo-block {}
+
+  .cover-logo-la {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 12vw, 160px);
+    line-height: 0.85;
+    color: var(--white);
+    letter-spacing: -2px;
+    display: block;
+  }
+
+  .cover-logo-people {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 12vw, 160px);
+    line-height: 0.85;
+    color: var(--yellow);
+    letter-spacing: -2px;
+    display: block;
+  }
+
+  .cover-logo-habla {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 12vw, 160px);
+    line-height: 0.85;
+    color: var(--blue);
+    letter-spacing: -2px;
+    display: block;
+    -webkit-text-stroke: 3px var(--blue);
+  }
+
+  .cover-tagline {
+    display: inline-block;
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    margin-top: 20px;
+  }
+
+  .cover-meta {
+    padding-top: 40px;
+  }
+
+  .cover-edition {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--coral);
+    letter-spacing: 3px;
+  }
+
+  .cover-school {
+    font-size: 13px;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.5;
+    margin-top: 6px;
+    max-width: 280px;
+  }
+
+  .cover-right {
+    position: relative;
+    background: var(--blue);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cover-right-pattern {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.04) 30px,
+      rgba(255,255,255,0.04) 60px
+    );
+  }
+
+  .cover-right-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .cover-statue-placeholder {
+    width: 280px;
+    height: 400px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+
+  .cover-quote {
+    margin-top: 30px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+    max-width: 260px;
+  }
+
+  .cover-bottom-bar {
+    background: var(--red);
+    padding: 14px 60px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    z-index: 10;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .cover-bottom-bar span { opacity: 0.7; font-weight: 400; }
+
+  /* ─── CRÉDITOS ─────────────────────────────── */
+  .credits-page {
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .credits-left {
+    background: var(--black);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .credits-logo-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 0.9;
+    color: var(--white);
+  }
+
+  .credits-logo-big span { color: var(--yellow); }
+
+  .credits-right {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .credit-item {}
+  .credit-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+  .credit-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--black);
+  }
+
+  .credits-edition-badge {
+    margin-top: 40px;
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding: 12px 24px;
+  }
+
+  /* ─── PRESENTACIÓN ─────────────────────────── */
+  .presentation-page {
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--black);
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  .section-header {
+    padding: 40px 60px 30px;
+    border-bottom: 3px solid var(--black);
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+
+  .section-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    background: var(--black);
+    color: var(--white);
+    padding: 6px 12px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    color: var(--black);
+  }
+
+  .presentation-body {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+  }
+
+  .presentation-sidebar {
+    padding: 60px 40px;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+
+  .author-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    font-weight: 700;
+    margin-top: 12px;
+  }
+  .author-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  .sidebar-pull-quote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--yellow);
+    border-left: 4px solid var(--yellow);
+    padding-left: 20px;
+    margin-top: 20px;
+  }
+
+  .presentation-text {
+    padding: 60px 60px;
+    column-count: 1;
+  }
+
+  .presentation-text p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  .presentation-text p:first-child::first-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 0.7;
+    float: left;
+    margin-right: 10px;
+    color: var(--blue);
+  }
+
+  /* ─── QUOTE PAGE ───────────────────────────── */
+  .quote-page {
+    min-height: 60vh;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-bg-text {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 300px;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -10px;
+    user-select: none;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+
+  .quote-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .quote-marks {
+    font-family: 'DM Serif Display', serif;
+    font-size: 120px;
+    color: var(--yellow);
+    line-height: 0.5;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3.5vw, 40px);
+    line-height: 1.35;
+    color: var(--white);
+  }
+
+  .quote-author {
+    margin-top: 32px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+
+  /* ─── CONTENIDOS ───────────────────────────── */
+  .contents-page {
+    min-height: 100vh;
+    background: var(--white);
+    color: var(--black);
+  }
+
+  .contents-header {
+    background: var(--black);
+    padding: 50px 60px;
+    border-bottom: 6px solid var(--yellow);
+  }
+
+  .contents-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    letter-spacing: -2px;
+    color: var(--white);
+    line-height: 0.85;
+  }
+
+  .contents-title span { color: var(--yellow); }
+
+  .contents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .contents-item {
+    padding: 40px 60px;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    border-right: 2px solid rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    align-items: start;
+    transition: background 0.2s;
+  }
+
+  .contents-item:hover { background: rgba(43,91,255,0.04); }
+  .contents-item:nth-child(2n) { border-right: none; }
+
+  .contents-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--yellow);
+    -webkit-text-stroke: 2px var(--black);
+    text-stroke: 2px var(--black);
+  }
+
+  .contents-info {}
+
+  .contents-section-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: var(--black);
+  }
+
+  .contents-section-color {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .contents-desc {
+    font-size: 13px;
+    color: rgba(0,0,0,0.55);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .contents-items-list {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .contents-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1.5px solid var(--black);
+    border-radius: 2px;
+    color: var(--black);
+  }
+
+  /* ─── SECTION DIVIDERS ─────────────────────── */
+  .section-divider {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sd-blue { background: var(--blue); }
+  .sd-purple { background: var(--purple); }
+  .sd-red { background: var(--red); }
+  .sd-yellow { background: var(--yellow); }
+
+  .section-divider .sd-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 300px;
+    color: rgba(255,255,255,0.08);
+    position: absolute;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .sd-yellow .sd-num { color: rgba(0,0,0,0.06); }
+
+  .section-divider .sd-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px;
+  }
+
+  .sd-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .sd-yellow .sd-label { color: rgba(0,0,0,0.4); }
+
+  .sd-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 120px);
+    letter-spacing: 4px;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .sd-yellow .sd-name { color: var(--black); }
+
+  .sd-desc {
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .sd-yellow .sd-desc { color: rgba(0,0,0,0.55); }
+
+  /* ─── ARTÍCULOS ────────────────────────────── */
+  .article-page {
+    background: var(--white);
+    color: var(--black);
+    padding: 0;
+  }
+
+  .article-header {
+    padding: 60px 60px 40px;
+    border-bottom: 3px solid var(--black);
+    position: relative;
+  }
+
+  .article-section-tag {
+    display: inline-block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  .tag-blue { background: var(--blue); color: var(--white); }
+  .tag-purple { background: var(--purple); color: var(--white); }
+  .tag-red { background: var(--red); color: var(--white); }
+  .tag-yellow { background: var(--yellow); color: var(--black); }
+  .tag-black { background: var(--black); color: var(--white); }
+
+  .article-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.9;
+    letter-spacing: -1px;
+    color: var(--black);
+    max-width: 900px;
+  }
+
+  .article-author {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+  }
+
+  .author-name {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .article-body {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 0;
+  }
+
+  .article-text {
+    padding: 50px 60px;
+    border-right: 2px solid rgba(0,0,0,0.08);
+  }
+
+  .article-text p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--black);
+    margin-bottom: 22px;
+  }
+
+  .article-text p.large-p {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #222;
+  }
+
+  .article-aside {
+    padding: 50px 40px;
+  }
+
+  .pull-quote {
+    border-top: 4px solid var(--black);
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .pull-quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--black);
+  }
+
+  /* ─── ARTE VIVO ────────────────────────────── */
+  .art-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--black);
+  }
+
+  .art-card {
+    padding: 60px 50px;
+    border-right: 2px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .art-card:nth-child(2n) { border-right: none; }
+
+  .art-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 30px;
+  }
+
+  .art-image-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .art-image-placeholder img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .art-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .art-artist {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .art-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .art-process {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  .art-process strong {
+    color: rgba(255,255,255,0.6);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ─── POEMAS ───────────────────────────────── */
+  .poems-page {
+    background: var(--white);
+    color: var(--black);
+    padding: 0;
+  }
+
+  .poem-card {
+    padding: 60px;
+    border-bottom: 3px solid var(--black);
+  }
+
+  .poem-card:last-child { border-bottom: none; }
+
+  .poem-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    letter-spacing: 1px;
+    line-height: 0.95;
+    margin-bottom: 10px;
+  }
+
+  .poem-author-badge {
+    display: inline-block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 32px;
+  }
+
+  .poem-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .poem-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    line-height: 2;
+    color: var(--black);
+    white-space: pre-line;
+  }
+
+  /* ─── CUENTO ───────────────────────────────── */
+  .cuento-page {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .cuento-header {
+    background: var(--red);
+    padding: 60px 60px 50px;
+  }
+
+  .cuento-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+  }
+
+  .cuento-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: -1px;
+  }
+
+  .cuento-author {
+    margin-top: 20px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .cuento-body {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+  }
+
+  .cuento-text p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 22px;
+  }
+
+  .cuento-text p.dialogue {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--coral);
+    padding-left: 24px;
+    border-left: 3px solid var(--coral);
+  }
+
+  .cuento-aside {
+    padding-top: 10px;
+  }
+
+  .cuento-pull {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: var(--coral);
+    border-top: 4px solid var(--coral);
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* ─── NAVIGATION ───────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(20px);
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255,226,40,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+
+  .nav-logo span { color: var(--yellow); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--yellow); }
+
+  /* ─── SCROLL ANIMATIONS ───────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger children */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal-stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.1s; }
+  .reveal-stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.2s; }
+  .reveal-stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.3s; }
+  .reveal-stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.4s; }
+  .reveal-stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.5s; }
+  .reveal-stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.6s; }
+  .reveal-stagger.visible > *:nth-child(7) { opacity:1; transform:none; transition-delay:0.7s; }
+  .reveal-stagger.visible > *:nth-child(8) { opacity:1; transform:none; transition-delay:0.8s; }
+
+  /* ─── PAGE WRAPPER ─────────────────────────── */
+  .page-wrapper {
+    margin-top: 56px;
+  }
+
+  .page-section {
+    scroll-margin-top: 56px;
+  }
+
+  /* ─── FOOTER ───────────────────────────────── */
+  footer {
+    background: var(--black);
+    border-top: 4px solid var(--yellow);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    color: var(--white);
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    line-height: 0.9;
+  }
+
+  .footer-logo span { color: var(--yellow); }
+
+  .footer-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-list li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .footer-bottom {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <div class="nav-logo">LA <span>PEOPLE</span> HABLA</div>
+  <ul class="nav-links">
+    <li><a href="#voz">La Voz</a></li>
+    <li><a href="#arte">Arte Vivo</a></li>
+    <li><a href="#letras">Letras</a></li>
+    <li><a href="#sonido">Sonido DAB</a></li>
+    <li><a href="#team">Team DAB</a></li>
+    <li><a href="#mente">Mente DAB</a></li>
+    <li><a href="#telon">Detrás del Telón</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ═══ PORTADA ═══ -->
+  <section class="cover page-section" id="portada">
+    <div class="cover-noise"></div>
+    <div class="cover-top-bar">
+      <span>Unidad Educativa Fiscomisional "Daniel Álvarez Burneo"</span>
+      <span>Edición 1 · Marzo 2026</span>
+    </div>
+
+    <div class="cover-hero">
+      <div class="cover-left">
+        <div class="cover-logo-block">
+          <span class="cover-logo-la">LA</span>
+          <span class="cover-logo-people">PEOPLE</span>
+          <span class="cover-logo-habla">HABLA</span>
+          <div class="cover-tagline">"Donde puedes ser tú mismo"</div>
+        </div>
+        <div class="cover-meta">
+          <div class="cover-edition">Edición 1 — Marzo 2026</div>
+          <div class="cover-school">Revista estudiantil de la Unidad Educativa Fiscomisional "Daniel Álvarez Burneo"</div>
+        </div>
+      </div>
+
+      <div class="cover-right">
+        <div class="cover-right-pattern"></div>
+        <div class="cover-right-content">
+          <div class="cover-statue-placeholder">🗿</div>
+          <div class="cover-quote">"Sin libertad no hay arte; el arte sólo vive de las restricciones que se impone a sí mismo."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-bottom-bar">
+      <span>La Voz de la People</span>
+      <span>Arte Vivo</span>
+      <span>Letras que Laten</span>
+      <span>Sonido DAB</span>
+      <span>Team DAB</span>
+      <span>Mente DAB</span>
+    </div>
+  </section>
+
+  <!-- ═══ CRÉDITOS ═══ -->
+  <section class="credits-page page-section reveal" id="creditos">
+    <div class="credits-left">
+      <div class="credits-logo-big">
+        LA<br><span>PEOPLE</span><br>HABLA
+      </div>
+      <div style="margin-top:40px; font-size:13px; color:rgba(255,255,255,0.35); line-height:1.7;">
+        Primera edición — 2026<br>
+        Revista estudiantil
+      </div>
+    </div>
+    <div class="credits-right">
+      <div class="credit-item">
+        <div class="credit-label">Fotografía de Portada & Dirección de Diseño</div>
+        <div class="credit-name">Lcdo. Marcelo Mendieta</div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-label">Dirección Editorial</div>
+        <div class="credit-name">Mgs. Carlos Rosero</div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-label">Dirección Técnica</div>
+        <div class="credit-name">Ing. Diego Benavides</div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-label">Creación y Coordinación General</div>
+        <div class="credit-name">Sr. David A. Marín</div>
+      </div>
+      <div class="credits-edition-badge">Primera Edición · 2026</div>
+    </div>
+  </section>
+
+  <!-- ═══ QUOTE CAMUS ═══ -->
+  <section class="quote-page reveal">
+    <div class="quote-bg-text">ARTE</div>
+    <div class="quote-content">
+      <span class="quote-marks">"</span>
+      <div class="quote-text">Sin libertad no hay arte; el arte sólo vive de las restricciones que se impone a sí mismo y muere por todas las demás</div>
+      <div class="quote-author">— Albert Camus</div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTENIDOS ═══ -->
+  <section class="contents-page page-section reveal" id="contenidos">
+    <div class="contents-header">
+      <div class="contents-title">CON<span>TENIDOS</span></div>
+    </div>
+    <div class="contents-grid reveal-stagger">
+      <div class="contents-item">
+        <div class="contents-num">1</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--blue)"></span>La Voz de la People</div>
+          <div class="contents-desc">El espacio para que los estudiantes opinen, debatan o escriban cartas abiertas sobre temas del colegio, la sociedad o el mundo actual.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Debate</span>
+            <span class="contents-tag">Opinión</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">2</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--purple)"></span>Arte Vivo</div>
+          <div class="contents-desc">Dibujos, fotografías, ilustraciones y cualquier creación visual hecha por nuestros compañeros.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Galería</span>
+            <span class="contents-tag">Fotografía</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">3</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--red)"></span>Letras que Laten</div>
+          <div class="contents-desc">Historias, poemas, microcuentos y pensamientos que nacen del corazón. La escritura como expresión libre.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Poema</span>
+            <span class="contents-tag">Cuento</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">4</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--mint)"></span>Sonido DAB</div>
+          <div class="contents-desc">Música, playlists, entrevistas, letras y opiniones que marcan el ritmo del colegio.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Encuesta DAB</span>
+            <span class="contents-tag">Recomendaciones</span>
+            <span class="contents-tag">Mini entrevista</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">5</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--coral)"></span>Team DAB</div>
+          <div class="contents-desc">Todo sobre deportes, torneos, atletas del colegio y vida saludable.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Galería Deportistas</span>
+            <span class="contents-tag">Entrevista</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">6</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--pink)"></span>Mente DAB</div>
+          <div class="contents-desc">Donde la curiosidad se vuelve descubrimiento. Proyectos, experimentos e inventos de los alumnos.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Artículo</span>
+            <span class="contents-tag">Proyecto</span>
+            <span class="contents-tag">Curiosidades</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">7</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--yellow)"></span>Detrás del Telón</div>
+          <div class="contents-desc">Cine, teatro, cultura y entretenimiento en una sola escena.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Películas</span>
+            <span class="contents-tag">Reseña</span>
+          </div>
+        </div>
+      </div>
+      <div class="contents-item">
+        <div class="contents-num">8</div>
+        <div class="contents-info">
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--black)"></span>Menciones y Participación</div>
+          <div class="contents-desc">Espacio para reconocer logros, concursos, aportes y colaboraciones estudiantiles.</div>
+          <div class="contents-items-list">
+            <span class="contents-tag">Destacados</span>
+            <span class="contents-tag">Intercolegiales</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRESENTACIÓN ═══ -->
+  <section class="presentation-page page-section reveal" id="presentacion">
+    <div class="section-header">
+      <span class="section-label">Editorial</span>
+      <h2 class="section-title">Presentación</h2>
+    </div>
+    <div class="presentation-body">
+      <div class="presentation-sidebar">
+        <div>
+          <div class="author-avatar">✍</div>
+          <div class="author-label">Coordinación General</div>
+          <div class="author-role">David A. Marín</div>
+        </div>
+        <div class="sidebar-pull-quote">
+          "Este proyecto se convirtió en algo más que una simple recopilación de obras: se volvió un refugio."
+        </div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7; margin-top:auto;">
+          Edición 1<br>Marzo 2026
+        </div>
+      </div>
+      <div class="presentation-text">
+        <p>Siempre he pensado que el primer paso es siempre el más complicado. No sé exactamente dónde escuché esa frase, o si tal vez la inventé sin darme cuenta mientras pensaba en cómo comenzar todo esto: esa primera letra escrita, ese primer cuadro de texto en blanco, o esa primera pintura que algún día formaría parte de esta revista.</p>
+        <p>Durante el proceso ocurrieron muchas cosas, más de las que imaginé al empezar. Puede que el tiempo me pasó tan rápido que ni yo mismo me di cuenta, en qué momento empecé a trabajar o en qué momento me perdí en mi propio ser.</p>
+        <p>En medio de todo, mientras todo iba tomando forma poco a poco, sentí que este proyecto se convirtió en algo más que una simple recopilación de obras: se volvió un refugio. Un lugar donde las ideas podían existir, los pensamientos podían volar y las emociones podían transformarse en algo tangible.</p>
+        <p>Y sinceramente espero que, de alguna manera, también pueda convertirse en un refugio para quienes participan en esta revista y para quienes quizás lo hagan en el futuro.</p>
+        <p>Ahora bien... ¿Por qué la revista LA PEOPLE HABLA? Lo diré siempre de la misma manera: el arte lo es todo. Existe en lo más sanguinario, en lo más profano, en lo más crudo, pero también vive en lo más dulce, en lo más tierno y en lo más inocente que un ser humano puede crear. El arte no es una sola cosa ni una sola forma; es un reflejo de todo lo que somos, incluso de aquello que a veces nos cuesta admitir.</p>
+        <p>Esta revista nace precisamente de eso: de la necesidad de crear, compartir y transformar lo que llevamos dentro en algo que otros también puedan sentir. Porque si algo he aprendido durante este proceso, es que el arte no solo existe para quien lo crea, sino también para quien lo encuentra y lo hace suyo.</p>
+        <p>Solo espero y ruego al destino que alguien más ocupe mi lugar detrás de un escritorio, computadora o celular. Las cosas pasan por algo, y si alguien se atreve en compartir, y lo más importante, seguir creando el camino de esta revista estudiantil, estaré muy agradecido...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVIDER: VOZ DE LA PEOPLE ═══ -->
+  <div class="section-divider sd-blue page-section reveal" id="voz">
+    <div class="sd-num">01</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 01</div>
+      <div class="sd-name">LA VOZ DE<br>LA PEOPLE</div>
+      <div class="sd-desc">El espacio donde los estudiantes opinen, debatan y escriban sobre temas del colegio, la sociedad y el mundo actual.</div>
+    </div>
+  </div>
+
+  <!-- ═══ ARTÍCULO: EL ARTE DE CAMINAR A CIEGAS ═══ -->
+  <section class="article-page page-section reveal">
+    <div class="article-header">
+      <div class="article-section-tag tag-blue">La Voz de la People · Opinión</div>
+      <h2 class="article-title">El Arte de Caminar a Ciegas</h2>
+      <div class="article-author">
+        <div class="author-dot" style="background:var(--blue)">N</div>
+        <div>
+          <div class="author-name">Nathaly Vallejo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <div class="article-text">
+        <p class="large-p">La incertidumbre. Una palabra que suena sumamente frustrante. Ese sentimiento de sentirse perdido, de no tener ni la más mínima idea de adónde ir, de qué hacer ni cómo hacerlo.</p>
+        <p>Cuando estamos en ese punto, no paramos de preguntarnos cuál será nuestro siguiente paso, si funcionará o no, y daríamos lo que fuera para anticiparnos a nuestro futuro.</p>
+        <p>Sin embargo… ¡adivina qué! Es imposible. ¿No sería increíble si todos naciéramos con la fabulosa habilidad de tomar cada una de nuestras decisiones con claridad, o incluso de tener marcado el camino que nos llevará a nuestro destino…?</p>
+        <p>No. Definitivamente no. ¿Dónde quedaría la valentía del ser humano al arriesgarse a elegir? En esta sociedad utópica, la esencia del individuo se vería afligida por lo idealista de la situación.</p>
+        <p>Por suerte, en nuestra desorientada sociedad las cosas no funcionan así. Y aunque a veces desearíamos tener todo claro, es una dicha tener la capacidad para sopesar diferentes posibilidades, analizarlas profundamente y finalmente elegir.</p>
+        <p>Según la información que he recogido y las diferentes teorías en mi mente, puedo decir que la incertidumbre es totalmente necesaria en el desarrollo personal. Ahora, esto no quiere decir que debamos vivir con inquietud constante, sino más bien que es realmente común estar en este estado, y en el intento de la superación del mismo.</p>
+        <p>Si queremos dejar de sobrepensar, es necesario que cambiemos el enfoque y nos concentremos en lo que pasa con nosotros ahora, no mañana. Reconocer que nos afecta más de lo que creemos es fundamental para empezar a analizar qué podemos hacer para no sofocarnos en la ansiedad y el miedo propios de la incertidumbre.</p>
+        <p>El verdadero combate es llegar a entender algo: esta batalla no tiene fin, porque los rivales aprendieron a resistir ante sus ataques. Aprendieron a convivir a pesar del terror que les provoca.</p>
+        <p>Cuando llevamos al miedo de la mano, lo palpamos y lo sentimos más que nunca, y aun así actuamos, estamos viviendo para nosotros y por nosotros. A pesar de saber el riesgo que existe, estamos siendo valientes, estamos siendo fieles a nuestro potencial, y estamos eligiéndonos una y otra vez.</p>
+        <p>Porque vivir con incertidumbre es eso: asumir que es inevitable y, aun así, mantenernos firmes, resistentes a lo desconocido, fieles a nuestro potencial y determinados a creer en nuestra suficiencia.</p>
+      </div>
+      <div class="article-aside">
+        <div class="pull-quote">
+          <div class="pull-quote-text">"Avanzar con miedo y con riesgos… ya es avanzar."</div>
+        </div>
+        <div class="pull-quote" style="border-top-color:var(--blue)">
+          <div class="pull-quote-text">"La incertidumbre es totalmente necesaria en el desarrollo personal."</div>
+        </div>
+        <div style="margin-top:40px; padding:20px; background:var(--black); color:var(--white);">
+          <div style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--yellow); font-weight:700; margin-bottom:12px;">En este número</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.7;">Debate estudiantil<br>Opinión libre<br>Reflexiones del colegio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVIDER: ARTE VIVO ═══ -->
+  <div class="section-divider sd-purple page-section reveal" id="arte">
+    <div class="sd-num">02</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 02</div>
+      <div class="sd-name">ARTE<br>VIVO</div>
+      <div class="sd-desc">Dibujos, fotografías, ilustraciones y cualquier creación visual nacida de nuestros compañeros.</div>
+    </div>
+  </div>
+
+  <!-- ═══ GALERÍA DE ARTE ═══ -->
+  <section class="art-grid page-section reveal-stagger">
+    <div class="art-card">
+      <div class="art-num">OBRA 01 / 04</div>
+      <div class="art-image-placeholder" style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 40%, #FFD700 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">🎨</div>
+      <div class="art-artist">Andrea Estrella</div>
+      <div class="art-title">Limerencia</div>
+      <div class="art-desc">La obra habla acerca de la idealización y dependencia emocional. Muestra qué sucede cuando creemos tener a la persona indicada, a la "solución" de nuestras propias carencias internas.</div>
+      <div class="art-process"><strong>Proceso creativo:</strong> Acrílico sobre papel Canson A3. Contrastes marcados entre rojo y amarillo para reforzar la tensión emocional. La figura amarilla, con halo, simboliza la idealización y lo inalcanzable.</div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-num">OBRA 02 / 04</div>
+      <div class="art-image-placeholder" style="background: linear-gradient(160deg, #f5e6c8 0%, #c8a882 50%, #8b6545 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">🖊</div>
+      <div class="art-artist">Doménica Jiménez</div>
+      <div class="art-title">¿Cómo Llegamos Aquí?</div>
+      <div class="art-desc">Interpretación personal de la vida estudiantil. Una escena doméstica que representa el caos y el desinterés que la rutina académica puede causar.</div>
+      <div class="art-process"><strong>Proceso creativo:</strong> Acuarela tradicional. Quería plasmar los efectos de la presión académica, especialmente en años superiores, donde se supone debes decidir qué quieres hacer con tu vida.</div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-num">OBRA 03 / 04</div>
+      <div class="art-image-placeholder" style="background: linear-gradient(135deg, #87CEEB 0%, #228B22 50%, #FF4500 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">📷</div>
+      <div class="art-artist">Emily Acaro</div>
+      <div class="art-title">Mariposa</div>
+      <div class="art-desc">Bastó una sola mirada hacia el cielo para fijarme en el pequeño ser que se posaba en el árbol. La belleza reside incluso en lo más pequeño.</div>
+      <div class="art-process"><strong>Proceso creativo:</strong> Fotografía tomada con celular, en luz natural y sin edición. Un momento espontáneo mientras caminaba con la cámara abierta.</div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-num">OBRA 04 / 04</div>
+      <div class="art-image-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">💻</div>
+      <div class="art-artist">Alejandra Valarezo</div>
+      <div class="art-title">Noche de Musicales y Ronroneos</div>
+      <div class="art-desc">El personaje presentado es Akira. A ella le gusta pasar su tiempo libre en casa divirtiéndose con su gatito Tsuki (Luna). Una gran fan de los musicales.</div>
+      <div class="art-process"><strong>Proceso creativo:</strong> Dibujo digital en Tablet con lápiz gráfico y la app Sketchbook, usando 24 capas. Luces en tres capas para efectos del televisor, ambiente y luz azul principal.</div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVIDER: LETRAS QUE LATEN ═══ -->
+  <div class="section-divider sd-red page-section reveal" id="letras">
+    <div class="sd-num">03</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 03</div>
+      <div class="sd-name">LETRAS<br>QUE LATEN</div>
+      <div class="sd-desc">Historias, poemas, microcuentos y pensamientos que nacen del corazón. La escritura como forma de expresión libre.</div>
+    </div>
+  </div>
+
+  <!-- ═══ POEMAS ═══ -->
+  <section class="poems-page page-section">
+
+    <div class="poem-card reveal">
+      <div class="poem-title" style="color:var(--red)">Moras Sabor a Amor<br>No Correspondido</div>
+      <div class="poem-author-badge tag-red">"RMJ"</div>
+      <div class="poem-columns">
+        <div class="poem-text">No quiero ser tu amiga.
+Pero quiero ser tu amiga.
+Quiero que sepas lo que siento.
+Pero no quiero que sepas lo que siento.
+No es tu culpa lo que siento.
+Pero es tu culpa el cómo me siento.
+
+Quiero que me mires,
+Pero no mucho porque me pongo nerviosa.
+Me imagino diciéndote "me gustas"
+Y siento al universo y al destino riéndose como odiosas.
+
+Quiero observarte por horas
+Y que no me regreses la mirada,
+Pues si siento el sabor a moras,
+En tu alma yo quedaré atrapada.</div>
+        <div class="poem-text">¿Si me volteas a ver,
+te darás cuenta del amor que mis ojos aguardan?
+
+Te miro cuando tú no miras.
+Cada centímetro me fascina.
+Mis ojos brillan y me embobo.
+Voy cayendo poco a poco.
+
+Es una condena de por vida.
+Una causa que aniquila.
+
+Para ese corazón que sin saberlo tú rompiste.
+Pero no te duele pues nada perdiste.
+
+Aún así me convenzo de que todo sería diferente
+Si algún día tú me quisieras.</div>
+      </div>
+    </div>
+
+    <div class="poem-card reveal" style="background:var(--black); color:var(--white);">
+      <div class="poem-title" style="color:var(--red)">Versos que no<br>Llegaron a tu Oído</div>
+      <div class="poem-author-badge tag-black">Karina López</div>
+      <div style="max-width:600px; margin:0 auto; text-align:center;">
+        <div class="poem-text" style="color:rgba(255,255,255,0.85);">En la travesía de todo ser humano,
+las cosas siempre pasan por algo.
+
+Cruzamos desilusiones, decepciones,
+amistades falsas,
+días grises donde nada parece mejorar.
+
+Pero siempre hay alguien que deja una huella en el corazón.
+
+Nadie debería juzgar un libro por su portada,
+sin antes descubrir sus páginas.
+
+Y así, entre estos vaivenes,
+terminamos en un boulevard de sueños rotos,
+donde cada paso es un recuerdo
+y cada pausa es solo un amanecer que ya no compartimos.
+
+Porque la vida no es la que uno vivió,
+sino la que uno recuerda,
+y cómo la recuerda para contarla.</div>
+      </div>
+    </div>
+
+    <div class="poem-card reveal">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px;">
+        <div>
+          <div class="poem-title" style="color:var(--blue); font-size:40px;">Mientras Tanto</div>
+          <div class="poem-author-badge tag-blue">"Gigi"</div>
+          <div class="poem-text">Tus acciones me hacen dudar,
+pero también sé que no puedo ignorar
+cómo tu mirada me busca al pasar,
+dejando mil preguntas por descifrar.
+
+No te voy a mentir:
+a veces lo que siento no me deja dormir,
+y en más de una ocasión
+me has hecho palpitar el corazón.
+
+Sin embargo, soy consciente
+de que nuestra metamorfosis es inminente;
+pronto el capullo habrá que romper,
+aunque me aterre la idea de no volverte a ver.
+
+Quizás en otro verano,
+tal vez cercano o lejano,
+si nuestros caminos se vuelven a alinear,
+quién sabe si entonces lo podamos intentar.</div>
+        </div>
+        <div>
+          <div class="poem-title" style="color:var(--purple); font-size:40px;">El Camino de Nuestros Sentimientos</div>
+          <div class="poem-author-badge tag-purple">"Rabbit"</div>
+          <div class="poem-text">¿Por qué nos duele?
+Si ya sabemos
+lo que va a pasar.
+
+Si ya conocemos
+el camino que han
+decidido tomar.
+
+Nos duele
+porque forman parte de
+nuestros recuerdos,
+porque habitaron en
+nuestros sentimientos.
+
+Nos atraparon,
+con sus engaños.
+
+Nos llevaron
+a un camino de anhelos,
+una simple máscara de
+sus engaños.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="poem-card reveal">
+      <div class="poem-title" style="color:var(--coral)">¿Qué Hubiera Pasado?</div>
+      <div class="poem-author-badge tag-black">Santiago Torres</div>
+      <div class="poem-columns">
+        <div class="poem-text">¿Qué hubiera pasado
+si ese día no levantaba la mirada?
+Si me quedaba viendo el suelo,
+mientras sobre pensaba,
+como en un sueño.
+
+Porque no fue un incendio,
+tampoco una tormenta repentina,
+fue algo más sencillo:
+tu voz cruzando el aire
+y mi mundo moviéndose un poco.
+
+Tal vez mi vida sería ordenada,
+predecible como una línea recta,
+sin sobresaltos, sin preguntas,
+sin esa forma nueva
+de sentir que algo tiembla por dentro.
+
+Porque contigo aprendí
+que el silencio no siempre es vacío,
+que a veces guarda respuestas
+que solo aparecen
+cuando alguien sabe quedarse.</div>
+        <div class="poem-text">¿Qué hubiera pasado
+si el miedo ganaba primero?
+Si por proteger mi calma
+levantaba un muro entero.
+
+Quizá estaría intacto,
+pero también incompleto.
+A salvo de ese raro sentir,
+pero sin descubrir
+que hay riesgos que valen la pena.
+
+No eres una historia perfecta,
+ni yo soy una promesa eterna,
+pero en medio de nuestras dudas
+hay algo que respira distinto.
+
+No sé qué dirá el mañana.
+Lo único que sé
+es que, si vuelvo atrás
+a ese momento exacto
+en que todo comenzó,
+no cambiaría nada.
+
+Y eso basta.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══ CUENTO ═══ -->
+  <section class="cuento-page page-section reveal">
+    <div class="cuento-header">
+      <div class="cuento-label">Letras que Laten · Cuento</div>
+      <div class="cuento-title">El Desamor<br>del Corazón</div>
+      <div class="cuento-author">por Melanie Soto</div>
+    </div>
+    <div class="cuento-body">
+      <div class="cuento-text">
+        <p>El corazón, cada día, observaba por las ventanas de su habitación ese sentimiento que todos llamaban amor. Hasta ahora, su única distracción siempre fue observar a través de las ventanas, que ahora estaban empañadas. Él no sabía de la existencia de este "amor"; es más, nunca lo había experimentado.</p>
+        <p>El corazón, emocionado por haberlo encontrado, empezó a bombear más rápido, más fuerte, tanto que sentía que podía salir de esas ventanas y abrazar ese amor. Para el corazón, dicha sensación fue nueva; nunca la había experimentado. Se sentía tan feliz, tan alegre, tan emocionado.</p>
+        <p>El corazón, saltando con pura alegría, salió de su casa. Al momento de estar a punto de hablarle a su otro corazón, se cayó. El corazón, confundido, miró el piso; el piso estaba lleno de espinas.</p>
+        <p class="dialogue">—¿Por qué espinas?— se preguntó el corazón.</p>
+        <p>El corazón no se rindió y se levantó; aunque herido, no iba a dejar ir esta oportunidad. Siguió caminando, mientras más espinas lo iban atravesando.</p>
+        <p>Con pasos rápidos, llegó hasta su otro corazón; lo tocó y, al hacerlo, este se alejó.</p>
+        <p class="dialogue">—¿Por qué te alejas?— preguntó el corazón.</p>
+        <p>El otro corazón no respondió; simplemente se alejó, sin mirar atrás. El corazón esperó, y esperó; quizás solo estaba ocupado. Esperó y esperó; pasaron días, meses, pero la espera solo se hacía eterna.</p>
+        <p>El corazón, ya cansado, volvió a su habitación. Pensó en lo mucho que tuvo que sacrificar para que al final se quedara sin nada. Volvió hacia aquellas ventanas que siempre lo habían acompañado y las miró, cansado, triste y agrietado.</p>
+      </div>
+      <div class="cuento-aside">
+        <div class="cuento-pull">EL PISO ESTABA LLENO DE ESPINAS</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+          <span style="color:var(--coral); font-weight:700; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-bottom:8px;">Sobre la autora</span>
+          Melanie Soto · Letras que Laten
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVIDERS RESTANTES ═══ -->
+  <div class="section-divider sd-yellow page-section reveal" id="sonido">
+    <div class="sd-num">04</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 04</div>
+      <div class="sd-name">SONIDO<br>DAB</div>
+      <div class="sd-desc">Música, playlists, entrevistas y opiniones que marcan el ritmo del colegio.</div>
+    </div>
+  </div>
+
+  <div class="section-divider sd-blue page-section reveal" id="team" style="background:#FF6B47;">
+    <div class="sd-num">05</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 05</div>
+      <div class="sd-name">TEAM<br>DAB</div>
+      <div class="sd-desc">Todo sobre deportes, torneos, atletas del colegio y vida saludable.</div>
+    </div>
+  </div>
+
+  <div class="section-divider page-section reveal" id="mente" style="background:#FF3CAC;">
+    <div class="sd-num">06</div>
+    <div class="sd-content">
+      <div class="sd-label">Sección 06</div>
+      <div class="sd-name">MENTE<br>DAB</div>
+      <div class="sd-desc">Donde la curiosidad se vuelve descubrimiento. Proyectos, experimentos e inventos de los alumnos.</div>
+    </div>
+  </div>
+
+  <div class="section-divider sd-black page-section reveal" id="telon" style="background:#1a1a1a; border-top:4px solid var(--yellow);">
+    <div class="sd-num" style="color:rgba(255,255,255,0.05)">07</div>
+    <div class="sd-content">
+      <div class="sd-label" style="color:rgba(255,226,40,0.6)">Sección 07</div>
+      <div class="sd-name">DETRÁS<br>DEL TELÓN</div>
+      <div class="sd-desc">Cine, teatro, cultura y entretenimiento en una sola escena.</div>
+    </div>
+  </div>
+
+  <div class="section-divider sd-black page-section reveal" style="background:var(--black); border-top:4px solid var(--white); min-height:60vh;">
+    <div class="sd-num" style="color:rgba(255,255,255,0.03)">08</div>
+    <div class="sd-content">
+      <div class="sd-label" style="color:rgba(255,255,255,0.4)">Sección 08</div>
+      <div class="sd-name">MENCIONES<br>Y PARTICIPACIÓN</div>
+      <div class="sd-desc">Espacio para reconocer logros, concursos, aportes y colaboraciones estudiantiles.</div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div>
+      <div class="footer-logo">LA <span>PEOPLE</span><br>HABLA</div>
+      <div class="footer-desc">Revista estudiantil de la Unidad Educativa Fiscomisional "Daniel Álvarez Burneo".<br><br>Primera Edición · Marzo 2026</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Equipo Editorial</div>
+      <ul class="footer-list">
+        <li>Fotografía & Diseño: Lcdo. Marcelo Mendieta</li>
+        <li>Dirección Editorial: Mgs. Carlos Rosero</li>
+        <li>Dirección Técnica: Ing. Diego Benavides</li>
+        <li>Coordinación: Sr. David A. Marín</li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Secciones</div>
+      <ul class="footer-list">
+        <li>La Voz de la People</li>
+        <li>Arte Vivo</li>
+        <li>Letras que Laten</li>
+        <li>Sonido DAB</li>
+        <li>Team DAB · Mente DAB</li>
+        <li>Detrás del Telón</li>
+        <li>Menciones y Participación</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>La People Habla · Edición 1 · Marzo 2026</span>
+    <span>"Donde puedes ser tú mismo"</span>
+  </div>
+
+</div><!-- end page-wrapper -->
+
+<script>
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  // Cover text animation
+  document.querySelectorAll('.cover-logo-la, .cover-logo-people, .cover-logo-habla').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-40px)';
+    el.style.transition = `opacity 0.8s ease ${i * 0.2}s, transform 0.8s ease ${i * 0.2}s`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateX(0)';
+    }, 100 + i * 200);
+  });
+</script>
+</body>
+</html>

@@ -30,7 +30,7 @@
   /* ─── PORTADA ──────────────────────────────── */
   .cover {
     min-height: 100vh;
-    background: var(--black);
+    background: #ffffff;
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 0;
@@ -45,8 +45,8 @@
   }
 
   .cover-top-bar {
-    background: var(--yellow);
-    color: var(--black);
+    background: #0a0a0a;
+    color: #ffffff;
     padding: 10px 40px;
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 3px solid var(--yellow);
+    border-right: 3px solid #0a0a0a;
+    background: #ffffff;
   }
 
   .cover-logo-block {}
@@ -81,7 +82,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(80px, 12vw, 160px);
     line-height: 0.85;
-    color: var(--white);
+    color: #0a0a0a;
     letter-spacing: -2px;
     display: block;
   }
@@ -90,7 +91,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(80px, 12vw, 160px);
     line-height: 0.85;
-    color: var(--yellow);
+    color: #0a0a0a;
     letter-spacing: -2px;
     display: block;
   }
@@ -99,16 +100,16 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(80px, 12vw, 160px);
     line-height: 0.85;
-    color: var(--blue);
+    color: #2B5BFF;
     letter-spacing: -2px;
     display: block;
-    -webkit-text-stroke: 3px var(--blue);
+    -webkit-text-stroke: 0px;
   }
 
   .cover-tagline {
     display: inline-block;
-    background: var(--white);
-    color: var(--black);
+    background: #0a0a0a;
+    color: #ffffff;
     font-family: 'Instrument Sans', sans-serif;
     font-weight: 700;
     font-size: 11px;
@@ -125,13 +126,13 @@
   .cover-edition {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
-    color: var(--coral);
+    color: #0a0a0a;
     letter-spacing: 3px;
   }
 
   .cover-school {
     font-size: 13px;
-    color: rgba(245,240,232,0.5);
+    color: rgba(10,10,10,0.5);
     line-height: 1.5;
     margin-top: 6px;
     max-width: 280px;
@@ -139,7 +140,7 @@
 
   .cover-right {
     position: relative;
-    background: var(--blue);
+    background: #f0f0f0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -152,8 +153,8 @@
       45deg,
       transparent,
       transparent 30px,
-      rgba(255,255,255,0.04) 30px,
-      rgba(255,255,255,0.04) 60px
+      rgba(0,0,0,0.03) 30px,
+      rgba(0,0,0,0.03) 60px
     );
   }
 
@@ -165,30 +166,34 @@
   }
 
   .cover-statue-placeholder {
-    width: 280px;
-    height: 400px;
-    background: rgba(255,255,255,0.08);
-    border: 2px solid rgba(255,255,255,0.2);
+    width: 260px;
+    height: 260px;
+    background: #e8e8e8;
+    border: 3px solid #0a0a0a;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 80px;
-    border-radius: 4px;
+    font-size: 90px;
     margin: 0 auto;
+    overflow: hidden;
   }
+
+  /* Para reemplazar con imagen: <div class="cover-statue-placeholder"><img src="tu-imagen.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> */
 
   .cover-quote {
     margin-top: 30px;
     font-family: 'DM Serif Display', serif;
     font-style: italic;
-    font-size: 18px;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.4;
-    max-width: 260px;
+    font-size: 16px;
+    color: rgba(10,10,10,0.6);
+    line-height: 1.5;
+    max-width: 240px;
+    text-align: center;
   }
 
   .cover-bottom-bar {
-    background: var(--red);
+    background: #0a0a0a;
     padding: 14px 60px;
     display: flex;
     gap: 40px;
@@ -638,17 +643,14 @@
   }
 
   .author-dot {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.author-dot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
   }
 
   .author-name {
@@ -901,7 +903,53 @@
     margin-bottom: 40px;
   }
 
-  /* ─── NAVIGATION ───────────────────────────── */
+  /* ─── CÍRCULOS DE AUTOR / LOGO ─────────────── */
+  .author-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e8e8e8;
+    border: 2px solid #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  /* Para reemplazar con imagen: <div class="author-circle"><img src="foto.jpg" style="width:100%;height:100%;object-fit:cover;"></div> */
+
+  .logo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #0a0a0a;
+    border: 3px solid #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  /* Para reemplazar con logo: <div class="logo-circle"><img src="logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> */
+
+  .art-author-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  /* Para reemplazar con imagen: <div class="art-author-circle"><img src="foto.jpg" style="width:100%;height:100%;object-fit:cover;"></div> */
+
+
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -1086,9 +1134,7 @@
       <div class="cover-right">
         <div class="cover-right-pattern"></div>
         <div class="cover-right-content">
-          <div class="cover-statue-placeholder">
-  <img src="images/Dise%C3%B1o%20Sin%20T%C3%ADtulo%20-%201.png" alt="Imagen portada" class="cover-image">
-          </div>
+          <div class="cover-statue-placeholder">🗿</div>
           <div class="cover-quote">"Sin libertad no hay arte; el arte sólo vive de las restricciones que se impone a sí mismo."</div>
         </div>
       </div>
@@ -1107,6 +1153,8 @@
   <!-- ═══ CRÉDITOS ═══ -->
   <section class="credits-page page-section reveal" id="creditos">
     <div class="credits-left">
+      <div class="logo-circle">📣</div>
+      <!-- Para reemplazar: <div class="logo-circle"><img src="images/logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> -->
       <div class="credits-logo-big">
         LA<br><span>PEOPLE</span><br>HABLA
       </div>
@@ -1126,7 +1174,7 @@
       </div>
       <div class="credit-item">
         <div class="credit-label">Dirección Técnica</div>
-        <div class="credit-name">Mgs. Diego Benavides</div>
+        <div class="credit-name">Ing. Diego Benavides</div>
       </div>
       <div class="credit-item">
         <div class="credit-label">Creación y Coordinación General</div>
@@ -1231,17 +1279,6 @@
           </div>
         </div>
       </div>
-      <div class="contents-item">
-        <div class="contents-num">8</div>
-        <div class="contents-info">
-          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--black)"></span>Menciones y Participación</div>
-          <div class="contents-desc">Espacio para reconocer logros, concursos, aportes y colaboraciones estudiantiles.</div>
-          <div class="contents-items-list">
-            <span class="contents-tag">Destacados</span>
-            <span class="contents-tag">Intercolegiales</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1254,7 +1291,8 @@
     <div class="presentation-body">
       <div class="presentation-sidebar">
         <div>
-          <div class="author-avatar">✍</div>
+          <div class="author-circle">✍️</div>
+          <!-- Para reemplazar: <div class="author-circle"><img src="images/david-marin.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
           <div class="author-label">Coordinación General</div>
           <div class="author-role">David A. Marín</div>
         </div>
@@ -1295,9 +1333,7 @@
       <div class="article-author">
         <div class="author-dot" style="background:var(--blue)">N</div>
         <div>
-          <div class="author-dot">
-  <img src="images/image_6.png" alt="Autor">
-          </div>
+          <div class="author-name">Nathaly Vallejo</div>
         </div>
       </div>
     </div>
@@ -1345,6 +1381,9 @@
     <div class="art-card">
       <div class="art-num">OBRA 01 / 04</div>
       <div class="art-image-placeholder" style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 40%, #FFD700 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">🎨</div>
+      <!-- Para imagen de obra: <div class="art-image-placeholder"><img src="images/limerencia.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+      <div class="art-author-circle">👩</div>
+      <!-- Para foto de autora: <div class="art-author-circle"><img src="images/andrea-estrella.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
       <div class="art-artist">Andrea Estrella</div>
       <div class="art-title">Limerencia</div>
       <div class="art-desc">La obra habla acerca de la idealización y dependencia emocional. Muestra qué sucede cuando creemos tener a la persona indicada, a la "solución" de nuestras propias carencias internas.</div>
@@ -1354,6 +1393,9 @@
     <div class="art-card">
       <div class="art-num">OBRA 02 / 04</div>
       <div class="art-image-placeholder" style="background: linear-gradient(160deg, #f5e6c8 0%, #c8a882 50%, #8b6545 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">🖊</div>
+      <!-- Para imagen de obra: <div class="art-image-placeholder"><img src="images/como-llegamos.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+      <div class="art-author-circle">👩</div>
+      <!-- Para foto de autora: <div class="art-author-circle"><img src="images/domenica-jimenez.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
       <div class="art-artist">Doménica Jiménez</div>
       <div class="art-title">¿Cómo Llegamos Aquí?</div>
       <div class="art-desc">Interpretación personal de la vida estudiantil. Una escena doméstica que representa el caos y el desinterés que la rutina académica puede causar.</div>
@@ -1363,6 +1405,9 @@
     <div class="art-card">
       <div class="art-num">OBRA 03 / 04</div>
       <div class="art-image-placeholder" style="background: linear-gradient(135deg, #87CEEB 0%, #228B22 50%, #FF4500 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">📷</div>
+      <!-- Para imagen de obra: <div class="art-image-placeholder"><img src="images/mariposa.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+      <div class="art-author-circle">👩</div>
+      <!-- Para foto de autora: <div class="art-author-circle"><img src="images/emily-acaro.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
       <div class="art-artist">Emily Acaro</div>
       <div class="art-title">Mariposa</div>
       <div class="art-desc">Bastó una sola mirada hacia el cielo para fijarme en el pequeño ser que se posaba en el árbol. La belleza reside incluso en lo más pequeño.</div>
@@ -1372,6 +1417,9 @@
     <div class="art-card">
       <div class="art-num">OBRA 04 / 04</div>
       <div class="art-image-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%); display:flex; align-items:center; justify-content:center; font-size:64px;">💻</div>
+      <!-- Para imagen de obra: <div class="art-image-placeholder"><img src="images/noche-musicales.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+      <div class="art-author-circle">👩</div>
+      <!-- Para foto de autora: <div class="art-author-circle"><img src="images/alejandra-valarezo.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
       <div class="art-artist">Alejandra Valarezo</div>
       <div class="art-title">Noche de Musicales y Ronroneos</div>
       <div class="art-desc">El personaje presentado es Akira. A ella le gusta pasar su tiempo libre en casa divirtiéndose con su gatito Tsuki (Luna). Una gran fan de los musicales.</div>
@@ -1633,15 +1681,6 @@ Y eso basta.</div>
     </div>
   </div>
 
-  <div class="section-divider sd-black page-section reveal" style="background:var(--black); border-top:4px solid var(--white); min-height:60vh;">
-    <div class="sd-num" style="color:rgba(255,255,255,0.03)">08</div>
-    <div class="sd-content">
-      <div class="sd-label" style="color:rgba(255,255,255,0.4)">Sección 08</div>
-      <div class="sd-name">MENCIONES<br>Y PARTICIPACIÓN</div>
-      <div class="sd-desc">Espacio para reconocer logros, concursos, aportes y colaboraciones estudiantiles.</div>
-    </div>
-  </div>
-
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div>
@@ -1666,7 +1705,6 @@ Y eso basta.</div>
         <li>Sonido DAB</li>
         <li>Team DAB · Mente DAB</li>
         <li>Detrás del Telón</li>
-        <li>Menciones y Participación</li>
       </ul>
     </div>
   </footer>

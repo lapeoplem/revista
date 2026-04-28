@@ -1078,6 +1078,71 @@
     color: rgba(255,255,255,0.55);
   }
 
+  /* ─── RESPONSIVE MÓVIL ─────────────────────── */
+  @media (max-width: 768px) {
+
+    /* Nav */
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }
+
+    /* Portada */
+    .cover-hero { grid-template-columns: 1fr; }
+    .cover-left { padding: 40px 24px; border-right: none; border-bottom: 3px solid #0a0a0a; }
+    .cover-right { min-height: 55vw; }
+    .cover-statue-placeholder { width: 160px; height: 160px; font-size: 60px; }
+    .cover-bottom-bar { flex-wrap: wrap; gap: 10px; padding: 14px 24px; font-size: 10px; }
+
+    /* Créditos */
+    .credits-page { grid-template-columns: 1fr; }
+    .credits-left { padding: 40px 24px 24px; }
+    .credits-logo-big { font-size: 48px; }
+    .credits-right { padding: 24px 24px 40px; }
+
+    /* Contenidos */
+    .contents-header { padding: 30px 24px; }
+    .contents-title { font-size: 56px; }
+    .contents-grid { grid-template-columns: 1fr; }
+    .contents-item { border-right: none !important; padding: 24px; }
+
+    /* Presentación */
+    .presentation-body { grid-template-columns: 1fr; }
+    .presentation-sidebar { padding: 32px 24px; }
+    .presentation-text { padding: 32px 24px; }
+    .section-header { padding: 24px 24px 20px; flex-wrap: wrap; gap: 10px; }
+    .section-title { font-size: 32px; }
+
+    /* Artículos */
+    .article-header { padding: 32px 24px 24px; }
+    .article-title { font-size: 36px; }
+    .article-body { grid-template-columns: 1fr; }
+    .article-text { padding: 32px 24px; border-right: none; }
+    .article-aside { padding: 0 24px 32px; }
+
+    /* Arte */
+    .art-grid { grid-template-columns: 1fr; }
+    .art-card { border-right: none !important; padding: 32px 24px; }
+
+    /* Poemas */
+    .poem-card { padding: 32px 24px; }
+    .poem-title { font-size: 36px; }
+    .poem-columns { grid-template-columns: 1fr; gap: 20px; }
+
+    /* Cuento */
+    .cuento-header { padding: 40px 24px 32px; }
+    .cuento-title { font-size: 40px; }
+    .cuento-body { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+    .cuento-aside { padding-top: 0; }
+
+    /* Dividers de sección */
+    .section-divider { min-height: 60vh; padding: 40px 24px; }
+    .sd-name { font-size: clamp(40px, 12vw, 80px); }
+    .sd-num { font-size: 180px; }
+
+    /* Footer */
+    footer { grid-template-columns: 1fr; padding: 40px 24px; gap: 24px; }
+    .footer-bottom { padding: 16px 24px; flex-direction: column; gap: 6px; font-size: 10px; }
+  }
+
   .footer-bottom {
     background: var(--black);
     border-top: 1px solid rgba(255,255,255,0.08);
@@ -1178,7 +1243,7 @@
       </div>
       <div class="credit-item">
         <div class="credit-label">Dirección Técnica</div>
-        <div class="credit-name">Ing. Diego Benavides</div>
+        <div class="credit-name">Mgs. Diego Benavides</div>
       </div>
       <div class="credit-item">
         <div class="credit-label">Creación y Coordinación General</div>

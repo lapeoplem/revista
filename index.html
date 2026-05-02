@@ -145,6 +145,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 50vh;
   }
 
   .cover-right-pattern {
@@ -160,26 +161,28 @@
 
   .cover-right-content {
     position: relative;
-    z-index: 2;
-    padding: 40px;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
   }
 
+
   .cover-statue-placeholder {
-    width: 260px;
-    height: 260px;
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
     background: #e8e8e8;
-    border: 3px solid #0a0a0a;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 90px;
-    margin: 0 auto;
+    font-size: clamp(100px, 18vw, 260px);
     overflow: hidden;
+    position: absolute;
+    inset: 0;
   }
 
-  /* Para reemplazar con imagen: <div class="cover-statue-placeholder"><img src="tu-imagen.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> */
+  /* Para reemplazar con imagen: <div class="cover-statue-placeholder"><img src="tu-imagen.png" style="width:100%;height:100%;object-fit:cover;"></div> */
 
   .cover-quote {
     margin-top: 30px;
@@ -1089,7 +1092,7 @@
     .cover-hero { grid-template-columns: 1fr; }
     .cover-left { padding: 40px 24px; border-right: none; border-bottom: 3px solid #0a0a0a; }
     .cover-right { min-height: 55vw; }
-    .cover-statue-placeholder { width: 160px; height: 160px; font-size: 60px; }
+    .cover-statue-placeholder { width: 100%; height: 220px; font-size: 80px; position: relative; min-height: 220px; }
     .cover-bottom-bar { flex-wrap: wrap; gap: 10px; padding: 14px 24px; font-size: 10px; }
 
     /* Créditos */
@@ -1166,8 +1169,6 @@
     <li><a href="#arte">Arte Vivo</a></li>
     <li><a href="#letras">Letras</a></li>
     <li><a href="#sonido">Sonido DAB</a></li>
-    <li><a href="#team">Team DAB</a></li>
-    <li><a href="#mente">Mente DAB</a></li>
     <li><a href="#telon">Detrás del Telón</a></li>
   </ul>
 </nav>
@@ -1200,9 +1201,8 @@
         <div class="cover-right-pattern"></div>
         <div class="cover-right-content">
           <div class="cover-statue-placeholder">
-            <img src="images/portada.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            <img src="images/portada.png" style="width:100%;height:100%;object-fit:cover;">
           </div>
-          <div class="cover-quote">"Sin libertad no hay arte; el arte sólo vive de las restricciones que se impone a sí mismo."</div>
         </div>
       </div>
     </div>
@@ -1212,8 +1212,7 @@
       <span>Arte Vivo</span>
       <span>Letras que Laten</span>
       <span>Sonido DAB</span>
-      <span>Team DAB</span>
-      <span>Mente DAB</span>
+      <span>Detrás del Telón</span>
     </div>
   </section>
 
@@ -1221,9 +1220,8 @@
   <section class="credits-page page-section reveal" id="creditos">
     <div class="credits-left">
       <div class="logo-circle">
-        <img src="images/logo.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-      </div>
-      <!-- Para reemplazar: <div class="logo-circle"><img src="images/logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> -->
+        <img src="images/logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>     <!-- Para reemplazar: <div class="logo-circle"><img src="images/logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div> -->
       <div class="credits-logo-big">
         LA<br><span>PEOPLE</span><br>HABLA
       </div>
@@ -1243,7 +1241,7 @@
       </div>
       <div class="credit-item">
         <div class="credit-label">Dirección Técnica</div>
-        <div class="credit-name">Mgs. Diego Benavides</div>
+        <div class="credit-name">Ing. Diego Benavides</div>
       </div>
       <div class="credit-item">
         <div class="credit-label">Creación y Coordinación General</div>
@@ -1275,7 +1273,6 @@
           <div class="contents-section-name"><span class="contents-section-color" style="background:var(--blue)"></span>La Voz de la People</div>
           <div class="contents-desc">El espacio para que los estudiantes opinen, debatan o escriban cartas abiertas sobre temas del colegio, la sociedad o el mundo actual.</div>
           <div class="contents-items-list">
-            <span class="contents-tag">Debate</span>
             <span class="contents-tag">Opinión</span>
           </div>
         </div>
@@ -1305,46 +1302,22 @@
       <div class="contents-item">
         <div class="contents-num">4</div>
         <div class="contents-info">
-          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--mint)"></span>Sonido DAB</div>
+          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--yellow); border:1px solid #ccc;"></span>Sonido DAB</div>
           <div class="contents-desc">Música, playlists, entrevistas, letras y opiniones que marcan el ritmo del colegio.</div>
           <div class="contents-items-list">
-            <span class="contents-tag">Encuesta DAB</span>
-            <span class="contents-tag">Recomendaciones</span>
-            <span class="contents-tag">Mini entrevista</span>
+            <span class="contents-tag">Entrevista · Los Pistachos</span>
+            <span class="contents-tag">Entrevista · Soulcore</span>
           </div>
         </div>
       </div>
       <div class="contents-item">
         <div class="contents-num">5</div>
         <div class="contents-info">
-          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--coral)"></span>Team DAB</div>
-          <div class="contents-desc">Todo sobre deportes, torneos, atletas del colegio y vida saludable.</div>
-          <div class="contents-items-list">
-            <span class="contents-tag">Galería Deportistas</span>
-            <span class="contents-tag">Entrevista</span>
-          </div>
-        </div>
-      </div>
-      <div class="contents-item">
-        <div class="contents-num">6</div>
-        <div class="contents-info">
-          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--pink)"></span>Mente DAB</div>
-          <div class="contents-desc">Donde la curiosidad se vuelve descubrimiento. Proyectos, experimentos e inventos de los alumnos.</div>
-          <div class="contents-items-list">
-            <span class="contents-tag">Artículo</span>
-            <span class="contents-tag">Proyecto</span>
-            <span class="contents-tag">Curiosidades</span>
-          </div>
-        </div>
-      </div>
-      <div class="contents-item">
-        <div class="contents-num">7</div>
-        <div class="contents-info">
-          <div class="contents-section-name"><span class="contents-section-color" style="background:var(--yellow)"></span>Detrás del Telón</div>
+          <div class="contents-section-name"><span class="contents-section-color" style="background:#FF8C42"></span>Detrás del Telón</div>
           <div class="contents-desc">Cine, teatro, cultura y entretenimiento en una sola escena.</div>
           <div class="contents-items-list">
-            <span class="contents-tag">Películas</span>
-            <span class="contents-tag">Reseña</span>
+            <span class="contents-tag">Reseña · Stranger Things</span>
+            <span class="contents-tag">Recomendación · Cine Ecuatoriano</span>
           </div>
         </div>
       </div>
@@ -1713,42 +1686,332 @@ Y eso basta.</div>
     </div>
   </section>
 
-  <!-- ═══ DIVIDERS RESTANTES ═══ -->
-  <div class="section-divider sd-yellow page-section reveal" id="sonido">
-    <div class="sd-num">04</div>
+  <!-- ═══ DIVIDER: SONIDO DAB ═══ -->
+  <div class="section-divider page-section reveal" id="sonido" style="background:var(--yellow);">
+    <div class="sd-num" style="color:rgba(0,0,0,0.06)">04</div>
     <div class="sd-content">
-      <div class="sd-label">Sección 04</div>
-      <div class="sd-name">SONIDO<br>DAB</div>
-      <div class="sd-desc">Música, playlists, entrevistas y opiniones que marcan el ritmo del colegio.</div>
+      <div class="sd-label" style="color:rgba(0,0,0,0.4)">Sección 04</div>
+      <div class="sd-name" style="color:#0a0a0a">SONIDO<br>DAB</div>
+      <div class="sd-desc" style="color:rgba(0,0,0,0.55)">Música, playlists, entrevistas y opiniones que marcan el ritmo del colegio.</div>
     </div>
   </div>
 
-  <div class="section-divider sd-blue page-section reveal" id="team" style="background:#FF6B47;">
-    <div class="sd-num">05</div>
+  <!-- ═══ ENTREVISTA 1: LOS PISTACHOS ═══ -->
+  <section class="article-page page-section reveal" style="background:#fff;">
+    <div class="article-header" style="border-bottom:3px solid #0a0a0a;">
+      <div class="article-section-tag tag-yellow" style="color:#0a0a0a;">Sonido DAB · Entrevista</div>
+      <h2 class="article-title" style="color:#0a0a0a;">Entrevista:<br>"Los Pistachos"</h2>
+      <div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap;">
+        <span style="font-size:13px; color:#555;">Carlos Ramón · Mateo Viñán · Matías Loyola · José Valencia · Emily Acaro · Jonathan</span>
+      </div>
+      <!-- 5 Instagram handles — reemplaza @ con el handle real -->
+      <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+        <span style="font-size:12px; font-weight:700; color:var(--blue); letter-spacing:0.05em;">@usuario_banda</span>
+        <span style="font-size:12px; font-weight:700; color:var(--blue);">@carlos_ramon</span>
+        <span style="font-size:12px; font-weight:700; color:var(--blue);">@mateo_vinan</span>
+        <span style="font-size:12px; font-weight:700; color:var(--blue);">@matias_loyola</span>
+        <span style="font-size:12px; font-weight:700; color:var(--blue);">@jose_valencia</span>
+      </div>
+    </div>
+
+    <!-- 3 image placeholders: 1 cuadrado + 2 rectángulos horizontales -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:12px; padding:32px 60px 0; background:#fff;">
+      <div style="grid-column:1; grid-row:1 / 3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:64px; overflow:hidden;">🎸
+        <!-- Para reemplazar: <img src="images/pistachos-foto1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+      <div style="grid-column:2; grid-row:1; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:48px; overflow:hidden;">🎵
+        <!-- Para reemplazar: <img src="images/pistachos-foto2.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+      <div style="grid-column:2; grid-row:2; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:48px; overflow:hidden;">🎤
+        <!-- Para reemplazar: <img src="images/pistachos-foto3.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+    </div>
+    <p style="font-size:10px; color:#aaa; padding:6px 60px 0; font-style:italic;">Imágenes: archivo de la banda</p>
+
+    <div class="article-body" style="grid-template-columns:1fr;">
+      <div class="article-text" style="border-right:none;">
+
+        <p><strong>1. ¿Quiénes son Los Pistachos y cuáles son sus miembros? ¿Cómo se originó el grupo y en qué momento decidieron consolidarse como banda?</strong></p>
+        <p>La banda, llamada Los Pistachos, nace en un entorno cotidiano: las aulas de clase de la Unidad Educativa Fiscomisional Daniel Álvarez Burneo. Su origen se remonta al 2024, cuando Carlos Ramón y Mateo Viñán comienzan con la idea de formar una banda, impulsados principalmente por el interés de Carlos de tener un proyecto musical propio.</p>
+        <p>Con el tiempo, el grupo fue creciendo de manera progresiva. Se integró Matías Loyola, quien además aportó con el nombre Los Pistachos, y posteriormente se sumó José Valencia. Más adelante, la banda continuó expandiéndose con la incorporación de Emily Acaro en 2025 como voz femenina, y luego Jonathan en 2026 como guitarrista y charanguista.</p>
+        <p>Desde sus inicios, el grupo se ha caracterizado por una dinámica colaborativa, donde cada integrante aporta desde su estilo y personalidad. Carlos Ramón se desempeña en el bajo y la voz, asumiendo en muchos casos un rol de liderazgo. Mateo Viñán (Jou) toca la guitarra acústica y eléctrica, además de encargarse de la parte técnica y la voz. José Valencia cumple un papel fundamental en la batería, mientras que Matías Loyola participa en el piano y la voz, adaptándose a distintas funciones dentro del grupo.</p>
+        <p>El motor principal que dio origen a la banda fue el amor por la música, una motivación que se ha mantenido constante. Su esencia puede resumirse como un "caos organizado", donde la diversidad de ideas, estilos y personalidades se transforma en una propuesta auténtica.</p>
+        <p>Lo que los diferencia no es solo su sonido, sino también su dinámica: una mezcla de originalidad, compromiso y una amistad sólida que los ha llevado a verse no solo como una banda, sino como una familia.</p>
+
+        <p><strong>2. Considerando que varios de sus integrantes son estudiantes, ¿cómo gestionan el equilibrio entre sus responsabilidades académicas y su desarrollo musical?</strong></p>
+        <p><strong>Carlos:</strong> Siempre le he dado prioridad a la música. Mi carrera muchas veces me aburre, así que no se me complica mover cosas. He vivido desde guambra en el derecho, entonces no suele pesar mucho ensayar. A veces, el descanso de la música es la carrera.</p>
+        <p><strong>Matías:</strong> Parte de la idea es que, cuando tienes un nuevo compromiso, hago todas las tareas un día antes o durante el fin de semana. Priorizo la banda para desocuparme de mis responsabilidades del colegio.</p>
+        <p><strong>Valencia:</strong> Tener un control para poder repasar y escuchar las canciones es importante. El descanso también es importante, ya que las carreras universitarias exigen mucho. Pero la música me relaja y me libera, es una oportunidad de salir mentalmente durante la semana. Seguir una ingeniería consume bastante.</p>
+        <p><strong>Jona:</strong> La música es un pasatiempo. Trato de adelantar tareas y culminar mis responsabilidades del colegio para luego seguir con mi pasatiempo.</p>
+
+        <p><strong>3. Desde una perspectiva artística, ¿cómo definirían la identidad musical de la banda?</strong></p>
+        <p><strong>Carlos:</strong> Creo que muy pocas bandas tienen una identidad fija, y nosotros no somos la excepción. Nos gusta probar con todo, pero como dijo Valencia, lo que más tocamos es rock, es lo que nos unió al inicio. Sin embargo, no nos encerramos solo en ese género.</p>
+        <p><strong>Matías:</strong> Al inicio de la banda, había un balance entre lo que cada integrante sabía y las canciones que les gustaban. Había influencia de El Cuarteto de Nos, pero luego, gracias a la improvisación y a fluir en el momento, logramos coordinar un "caos coordinado" que, aunque parece difícil, llega a convertirse en algo chévere.</p>
+        <p><strong>Jona:</strong> La variedad de gustos es lo que construye la esencia.</p>
+        <p><strong>Emi:</strong> Multifacética.</p>
+        <p><strong>Valencia:</strong> Al inicio era puro El Cuarteto de Nos, pero luego intentaron con otras cosas. Se volvió una explosión de ideas, aunque manteniendo el rock independiente.</p>
+
+        <p><strong>4. ¿Cómo ha sido la incorporación de nuevos integrantes a la banda? ¿Cómo ha sido este proceso y qué impacto consideran que tendrá en la dinámica del grupo?</strong></p>
+        <p><strong>Matías:</strong> Fue un proceso natural, acorde a lo que necesitábamos, poco a poco.</p>
+        <p><strong>Valencia:</strong> Fue genial porque teníamos una nueva mente. Importa compartir gustos y unir pensamientos. Uniendo pasiones y emociones podemos transmitir más cosas al público: mucha felicidad y una sensación de saborear la música. La voz femenina y el nuevo guitarrista aportaron bastante.</p>
+
+        <p><strong>5. En un colectivo creativo, es natural la existencia de distintas posturas. ¿De qué manera abordan los desacuerdos o diferencias artísticas?</strong></p>
+        <p><strong>Valencia:</strong> Hubo conflictos y desacuerdos musicales. Cada uno quería hacer lo que quería, y Carlos se estresó y quiso controlar todo. Luego, al madurar un poco, fueron siendo más abiertos para escoger las canciones. No tuvieron problemas en tocar más variaciones de música. Se volvieron más maduros, evolucionaron y entendieron mejor qué transmitir a la gente y qué elegir.</p>
+        <p><strong>Carlos:</strong> Ganar-ganar: yo pongo esta canción y tú pones esta. Todos tienen derecho a proponer sus canciones.</p>
+
+        <p><strong>6. ¿Existe alguna obra o interpretación que consideren representativa de la esencia de la banda? ¿Por qué?</strong></p>
+        <p>Indie pop es una canción inédita escrita por la banda, compuesta por Jou.</p>
+
+        <p><strong>7. Más allá del ámbito musical, ¿qué significado tiene Los Pistachos en lo personal y colectivo para sus integrantes?</strong></p>
+        <p><strong>Carlos:</strong> Es un grupo de amigos. Me siento cómodo por la amistad, es un cague de risa.</p>
+        <p><strong>Jou:</strong> Es un grupo de amigos, donde es de las pocas veces que la paso muy bien.</p>
+        <p><strong>Matías:</strong> Somos el mejor grupo de amigos. Hay muchos chistes, muchas referencias. Las canciones tienen identidad propia porque nos complementamos. Disfrutamos estar juntos, hemos madurado y conseguido una dinámica muy linda.</p>
+        <p><strong>Jona:</strong> Es la primera vez que estoy en una banda. Son excelentes personas y músicos. No es solo un enfoque artístico en los ensayos, sino también en lo personal.</p>
+        <p><strong>Valencia:</strong> Significa mucho: un grupo, una banda, muchos amigos que te dan experiencias. Pasamos mucho tiempo juntos entre ensayos y salidas. El hecho de llevarnos bien hace que sigamos en pie. Podemos hablar de todo, como una familia.</p>
+
+        <p><strong>10. ¿Qué emociones o ideas esperan transmitir al público a través de su música?</strong></p>
+        <p><strong>Carlos:</strong> Transmitir en los conciertos una historia que permita conectar, vivencias que permitan revivirlas en el escenario y generar nostalgia.</p>
+        <p><strong>Matías:</strong> Autenticidad, que la gente diga "wow, así se hizo".</p>
+        <p><strong>Jou:</strong> Siempre estamos bailando. El movimiento, las emociones y sentimientos; transmitir que cualquier canción pueda generar una emoción o idea en la gente.</p>
+        <p><strong>Valencia:</strong> Transmitir pasión para que la gente sienta eso. Que quien escuche la música sienta lo mismo que yo al hacerla: pasión, felicidad, amor, desamor… y gozar las canciones.</p>
+        <p><strong>Jona:</strong> En lo actual hay mucha monotonía y temas que no llegan al público. Sin despreciar, pero creemos que las denuncias sociales son necesarias, y queremos darles valor con canciones que representen eso.</p>
+
+        <p><strong>11. ¿Tienen algún mensaje importante para dar a aquellos estudiantes, de la institución educativa, que desean o están empezando el mundo musical?</strong></p>
+        <p><strong>Carlos:</strong> Mensaje: no se dejen, así no tengan todas las habilidades o aptitudes de músico. Aunque no seas perfecto o no tengas ventajas, no te detengas.</p>
+        <p><strong>Matías:</strong> A pesar de que la música y el dibujo están en la vida, y de que uno tenga habilidades o talentos, cuando te frustras o te bloqueas no significa que no puedas. Es importante que la acción prevalezca.</p>
+        <p><strong>Jou:</strong> Inténtalo. Hazlo por hacerlo, hazlo por gusto, hazlo porque lo disfrutas. Disfruta aprendiendo y experimenta. Hay mucha música allá afuera, y llegar con algo propio al mundo es algo muy lindo.</p>
+        <p><strong>Valencia:</strong> Saber si te gusta la música. No debería ser una carga, sino una liberación para despejar la mente. Organiza tus horarios, sé responsable y podrás llegar lejos.</p>
+        <p><strong>Jona:</strong> La música es un mundo complicado y muy extenso. Muchas personas pueden lograrlo si se lo proponen y no se rinden. El inicio es complejo con cualquier instrumento, pero con dedicación y entendiendo las bases, se puede avanzar. Además, la música y el arte deben compartirse con familia y amigos.</p>
+        <p><strong>Emily:</strong> Déjense enamorar por la música y el arte. No se trata solo de escuchar, aprender o tocar, sino de vivirlo, sentirlo y expresarlo. El arte está hecho para ser vivido y disfrutado. No tengan miedo de sentir a través de él; tengan miedo de dejar de hacerlo, porque dejaron de sentir.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENTREVISTA 2: CARLES FEIJÓ / SOULCORE ═══ -->
+  <section class="article-page page-section reveal" style="background:#0a0a0a;">
+    <div class="article-header" style="border-bottom:3px solid var(--yellow); background:#0a0a0a;">
+      <div class="article-section-tag tag-yellow" style="color:#0a0a0a;">Sonido DAB · Entrevista</div>
+      <h2 class="article-title" style="color:#ffffff;">Carles Feijó /<br>Soulcore</h2>
+      <div style="margin-top:16px;">
+        <span style="font-size:13px; color:rgba(255,255,255,0.5);">Entrevista al cantante y fundador</span>
+      </div>
+      <!-- 2 Instagram handles — reemplaza @ con el handle real -->
+      <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+        <span style="font-size:12px; font-weight:700; color:var(--yellow);">@soulcore_oficial</span>
+        <span style="font-size:12px; font-weight:700; color:var(--yellow);">@carles_feijo</span>
+      </div>
+    </div>
+
+    <!-- 3 image placeholders: 1 cuadrado + 2 rectángulos horizontales -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:12px; padding:32px 60px 0; background:#0a0a0a;">
+      <div style="grid-column:1; grid-row:1 / 3; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:64px; overflow:hidden;">🎙️
+        <!-- Para reemplazar: <img src="images/soulcore-foto1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+      <div style="grid-column:2; grid-row:1; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:48px; overflow:hidden;">🤘
+        <!-- Para reemplazar: <img src="images/soulcore-foto2.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+      <div style="grid-column:2; grid-row:2; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:48px; overflow:hidden;">🎸
+        <!-- Para reemplazar: <img src="images/soulcore-foto3.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
+    </div>
+    <p style="font-size:10px; color:#555; padding:6px 60px 0; font-style:italic; background:#0a0a0a;">Imágenes: archivo del artista</p>
+
+    <div class="article-body" style="grid-template-columns:1fr; background:#0a0a0a;">
+      <div class="article-text" style="border-right:none; background:#0a0a0a;">
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">1. Para quienes aún no conocen Soulcore, ¿cómo describiría la esencia y propuesta de este proyecto musical?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Yo describiría que la esencia y propuesta musical se basa principalmente en la "energía". El nombre lleva por significado "núcleo del alma", es de ahí donde yo considero que salen las emociones humanas, de ese modo, buscamos que la alegría y la pasión por el metal salgan a relucir en todas las personas.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">2. Tomando en cuenta su experiencia como cantante, ¿cómo influye esto en su proceso creativo y en el resultado final de su música?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Influye de gran manera. En Soulcore, siempre hemos buscado sembrar "momentos" que sean memorables para las personas que nos escuchen, brindándoles un show que los haga sentir en su corazón cada componente de todas las canciones.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">3. Desde su perspectiva, ¿qué diferencias existen entre su identidad personal y su identidad artística?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Hay una ligera diferencia; desde mi punto de vista mantengo un leve perfil de profesionalismo cuando se trata de adquirirlo con las decisiones que se vayan a tomar en cuanto a los shows de la banda, pero en general, me mantengo como un chico relajado, comprometido y responsable en cuanto a mi actuar se trata.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">4. ¿En qué momento decidió dedicarse no solo a la interpretación, sino también a la construcción de un proyecto musical propio?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Desde muy pequeño sentí una profunda admiración por este género musical en específico. El poder y energía que transmite el metal es incomparable y lo adoro muchísimo; además, me ha ayudado en momentos malos de mi vida, ha sido una forma de expresarme en todos los sentidos. y para ello, sentí que necesitaría mas integrantes que me acompañen en este proyecto, que así como yo, puedan emitir un mensaje o hablar sobre ellos mismos en cada canción.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">5. Como artista solista, ¿cuáles considera que son los principales retos que enfrenta en comparación con una banda?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Antes de fundar Soulcore, yo era un artista solista que usaba pistas de las canciones que le brindaba al publico con shows de gran esfuerzo. Considero que las mayores complicaciones de haber sido uno solo en el escenario fue que era difícil seguir el ritmo de las canciones, o a veces confundirme donde debia entrar para comenzar a cantar el verso, porque yo tenia que "seguir la canción" y si me equivocaba, la canción no se detendría a esperarme. Otra complicación era la presión al ser el único en el escenario, lo cual me ponía ante un mayor esfuerzo físico, dejándome extremadamente agotado después de cada show. Disfrute ser solista, pero me siento mucho mejor estar acompañado en el escenario.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">6. ¿Qué influencias musicales han contribuido a la construcción de su estilo actual?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Las influencias musicales que han contribuido al sonido y estilo de Soulcore han venido de distintas bandas clásicas en la escena del metal. Metallica, Megadeth, Slayer, Anthrax, Black Sabbath, Linkin Park, Limp Bizkit, System of a down, etc, son las agrupaciones que aportaron un granito de arena a nuestra inspiración.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">7. En su proceso de composición e interpretación, ¿predomina la inspiración en vivencias personales o en conceptos más abstractos?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Predomina mucho más la inspiración en vivencias personales. Un tema musical puede ser mas poético y complejo hablando musicalmente si un artista sabe como se siente y como expresar una experiencia personal.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">8. Si un oyente se acerca por primera vez a Soulcore, ¿qué obra le recomendaría y por qué?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Le recomendaría que escuche "Enter Sandman" o "Tornado of souls". Ambos son temas clásicos en el metal, y cada uno tiene su composición y diferente estructura en riffs, versos, etc. Son canciones que transmiten mucha energía, además de tratar temas como el temor que siente un niño al dormir a causa de sus pesadillas y también tratar una ruptura amorosa.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">9. A futuro, ¿se proyecta manteniendo su carrera musical?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Si, siento una gran ambición y cada vez mas quiero apuntar mucho mas alto con la agrupación, alcanzando cada vez mas publico que pueda escucharnos.</p>
+
+        <p style="color:rgba(255,255,255,0.85);"><strong style="color:#fff;">10. Para concluir, ¿qué mensaje o reflexión le gustaría que su música dejara en quienes la escuchan?</strong></p>
+        <p style="color:rgba(255,255,255,0.85);">Me gustaría dejar el mensaje que la vida esta llena de distintas experiencias que nos hacen aprender de algún modo, nos harán tocar fondo, o nos provocaran la mejor experiencia de nuestras vidas, pero a la final de todo eso se trata la vida, distintas experiencias que nos hacen crecer como personas al aprender de ellas.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DIVIDER: DETRÁS DEL TELÓN ═══ -->
+  <div class="section-divider sd-black page-section reveal" id="telon" style="background:#FF8C42;">
+    <div class="sd-num" style="color:rgba(255,255,255,0.08)">05</div>
     <div class="sd-content">
-      <div class="sd-label">Sección 05</div>
-      <div class="sd-name">TEAM<br>DAB</div>
-      <div class="sd-desc">Todo sobre deportes, torneos, atletas del colegio y vida saludable.</div>
+      <div class="sd-label" style="color:rgba(255,255,255,0.7)">Sección 05</div>
+      <div class="sd-name" style="color:#fff;">DETRÁS<br>DEL TELÓN</div>
+      <div class="sd-desc" style="color:rgba(255,255,255,0.8)">Cine, teatro, cultura y entretenimiento en una sola escena.</div>
     </div>
   </div>
 
-  <div class="section-divider page-section reveal" id="mente" style="background:#FF3CAC;">
-    <div class="sd-num">06</div>
-    <div class="sd-content">
-      <div class="sd-label">Sección 06</div>
-      <div class="sd-name">MENTE<br>DAB</div>
-      <div class="sd-desc">Donde la curiosidad se vuelve descubrimiento. Proyectos, experimentos e inventos de los alumnos.</div>
+  <!-- ═══ RESEÑA: STRANGER THINGS ═══ -->
+  <section class="article-page page-section reveal" style="background:#fff;">
+    <div class="article-header">
+      <div class="article-section-tag" style="background:#FF8C42; color:#fff; display:inline-block; font-family:'Instrument Sans',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; padding:6px 14px; margin-bottom:20px;">Detrás del Telón · Reseña</div>
+      <h2 class="article-title">Stranger Things y el<br>declive en su trama</h2>
+      <div class="article-author">
+        <div class="author-circle" style="background:#f0f0f0; border:2px solid #0a0a0a; font-size:22px;">🎬</div>
+        <!-- Para reemplazar foto: <div class="author-circle"><img src="images/blennis.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+        <div>
+          <div class="author-name">Blennis</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="section-divider sd-black page-section reveal" id="telon" style="background:#1a1a1a; border-top:4px solid var(--yellow);">
-    <div class="sd-num" style="color:rgba(255,255,255,0.05)">07</div>
-    <div class="sd-content">
-      <div class="sd-label" style="color:rgba(255,226,40,0.6)">Sección 07</div>
-      <div class="sd-name">DETRÁS<br>DEL TELÓN</div>
-      <div class="sd-desc">Cine, teatro, cultura y entretenimiento en una sola escena.</div>
+    <!-- 5 imágenes verticales tipo "gusanito" — fuente: IMDb -->
+    <div style="padding:24px 60px 0; background:#fff;">
+      <p style="font-size:10px; color:#999; font-style:italic; margin-bottom:10px;">Imágenes: IMDb · Solo para uso editorial / referencia</p>
+      <div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px;">
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">📺
+          <!-- <img src="images/st-img1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        </div>
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">👾
+          <!-- <img src="images/st-img2.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        </div>
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🌀
+          <!-- <img src="images/st-img3.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        </div>
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🔦
+          <!-- <img src="images/st-img4.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        </div>
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🎭
+          <!-- <img src="images/st-img5.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="article-body" style="grid-template-columns:1fr;">
+      <div class="article-text" style="border-right:none;">
+        <p class="large-p">Stranger Things, ambientada en los años 80 en el pueblo Hawkins, logró combinar ciencia ficción, terror y nostalgia, llegando a ser uno de los mayores éxitos de la plataforma Netflix. No obstante, lo que comenzó como una historia prometedora con personajes y conflictos profundos terminó en un final que carecía de la esencia que se mantuvo durante las primeras temporadas, decepcionando así a los fans que se mantuvieron fieles a la serie y que esperaban un final a la altura del inicio de la misma.</p>
+        <p>En sus inicios, la serie demostró un enfoque sólido centrado en la protagonista, Once, y en cómo superaba los conflictos que se le presentan al intentar mantener a sus amigos a salvo, consolidándose como la única esperanza ante lo extraño. Con cada capítulo, se podía apreciar el desarrollo de las historias de los personajes, sin descuidar la trama principal, manteniendo un perfecto balance entre lo sobrenatural y el drama. Todo esto, sumado a la escenografía que capturaba de manera perfecta la esencia de los años 80, lograba sumergir al espectador por completo en la atmósfera de suspenso y estética de la serie.</p>
+        <p>En la tercera y cuarta temporada se evidencia la falta de continuidad con las tramas anteriores, se comienza a abusar de escenas de relleno, añadiendo subtramas que más tarde no podrán desarrollarse completamente y se deja al espectador con la duda; además, pierde su dirección original, que se iba por la ciencia ficción y el misterio, y llega a ser más infantil, como Hopper, que pasó de ser un policía temido a un padre obsesivo y enojado. Se intenta hacer un desarrollo a Once, pero llega a verse forzado y exagerado, y termina restándole la complejidad emocional que tenía antes, dando escenas innecesarias de rupturas y reconciliación que llegan a ser cansadas, repetitivas, y brindan una imagen nueva del personaje, pero negativa, borrando todo el avance que se tuvo anteriormente.</p>
+        <p>Tras el lanzamiento de la cuarta temporada, las expectativas se mantuvieron altas a pesar de la evidente pérdida de esencia que tuvo la trama, esperando un final contundente que simbolizara el cierre de una era. Sin embargo, los hermanos Duffer transformaron lo que sería un acontecimiento histórico en un cierre flojo y apresurado, con explicaciones vacías y que, en muchos casos, contradecían el mismo guion de las primeras temporadas. El declive más notorio fueron los personajes que, en temporadas anteriores, demostraron ser el motor para el desarrollo de la trama, perdieron relevancia, siendo el caso de Once el más decepcionante, ya que comenzó a quedar en segundo plano, cediendo su protagonismo a otros personajes como Will y Holly.</p>
+        <p>La actuación de calidad requiere más que gestos simples y practicados, y se evidencia en esta última temporada cómo este aspecto falló totalmente. En la temporada 5, los actores conocen tan bien su impacto y popularidad que ya no arriesgan, ya no tienen necesidad de exponer emociones porque, de todas formas, el público consumirá el nuevo contenido. Saben qué cara poner para las reacciones que esperan, y eso mata la espontaneidad. Ya no existe vulnerabilidad, emoción o el sentimiento; eso se fue perdiendo a lo largo de las temporadas. Ahora es una interpretación predecible, con un guion que se ha agotado y una historia que debía llegar a su fin y no ser explotada hasta su decadencia.</p>
+        <p>En conclusión, Stranger Things pasó de ser un fenómeno mundial a convertirse en una víctima de su propio éxito. Lo que nació como una historia original terminó con un guion vacío y lleno de contradicciones, con actuaciones flojas y poco expresivas. La falta de riesgo creativo, el desgaste del guion y la pérdida de protagonismo de su personaje central evidencian que la serie se extendió más allá de lo que su historia podía sostener con calidad. No es que todo haya sido malo, pero sí se siente que la historia se alargó más de lo necesario. Al final, queda la sensación de que pudo haber sido un cierre mucho más impactante y fiel a lo que fue en el comienzo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RECOMENDACIÓN: CINE ECUATORIANO ═══ -->
+  <section class="article-page page-section reveal" style="background:#fff;">
+    <div class="article-header">
+      <div class="article-section-tag" style="background:#FF8C42; color:#fff; display:inline-block; font-family:'Instrument Sans',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.25em; text-transform:uppercase; padding:6px 14px; margin-bottom:20px;">Detrás del Telón · Recomendación</div>
+      <h2 class="article-title">Las 5 <em>joyitas</em> más<br>hermosas de Ecuador</h2>
+      <div class="article-author">
+        <div class="author-circle" style="background:#f0f0f0; border:2px solid #0a0a0a; font-size:22px;">🎥</div>
+        <!-- Para reemplazar foto: <div class="author-circle"><img src="images/marin.jpg" style="width:100%;height:100%;object-fit:cover;"></div> -->
+        <div>
+          <div class="author-name">"Marín"</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:10px; color:#aaa; padding:8px 60px 0; font-style:italic;">Imágenes de portadas: IMDb · Solo para uso editorial / referencia</p>
+
+    <div class="article-body" style="grid-template-columns:1fr;">
+      <div class="article-text" style="border-right:none;">
+        <p>Hay una idea incómoda que vale la pena decir en voz alta: consumimos muchísimo más cine extranjero del que producimos o incluso del que conocemos en nuestro propio país. No es solo una cuestión de calidad —porque Ecuador tiene películas muy potentes— sino de costumbre. Entre plataformas, tendencias y marketing, terminamos viendo lo de afuera casi por inercia. Y en ese proceso, dejamos de lado historias que hablan nuestro idioma, nuestros paisajes y nuestras contradicciones.</p>
+        <p>Así que, más que una simple lista, esto es casi una invitación (o un pequeño reclamo, si quieres verlo así): si te gusta el cine, no tiene mucho sentido ignorar el que se hace en casa. Aquí tienes cinco películas ecuatorianas que no solo valen la pena, sino que ayudan a entender por qué el cine nacional merece mucho más espacio del que le damos.</p>
+
+        <!-- Película 1 -->
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:start; margin:32px 0; padding:24px; background:#fafafa; border-left:4px solid #FF8C42;">
+          <div style="width:140px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:40px; overflow:hidden; flex-shrink:0;">🎬
+            <!-- <img src="images/que-tan-lejos.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          </div>
+          <div>
+            <p><strong>Qué tan lejos (2006)</strong></p>
+            <p>Si hay una película que se siente como una puerta de entrada al cine ecuatoriano, probablemente sea esta. Dirigida por Tania Hermida, Qué tan lejos no intenta ser grandilocuente ni épica, y justamente ahí está su fuerza.</p>
+            <p>La historia sigue a dos mujeres —una extranjera y una ecuatoriana— que viajan juntas por el país en medio de una huelga. Lo que parece un simple road trip se convierte en una exploración sutil sobre identidad, percepción y las múltiples formas de ver Ecuador.</p>
+            <p>No hay giros dramáticos exagerados ni conflictos artificiales. Es una película cuyo objetivo es hacerte respirar tranquilidad y risa, pero también reflexionar. Te hace notar detalles: la forma en que hablamos, cómo nos vemos a nosotros mismos, y cómo nos ven desde fuera.</p>
+          </div>
+        </div>
+
+        <!-- Película 2 -->
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:start; margin:32px 0; padding:24px; background:#fafafa; border-left:4px solid #FF8C42;">
+          <div style="width:140px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:40px; overflow:hidden; flex-shrink:0;">🐀
+            <!-- <img src="images/ratas-ratones-rateros.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          </div>
+          <div>
+            <p><strong>Ratas, ratones, rateros (1999)</strong></p>
+            <p>Ahora, si quieres algo más crudo y directo, este clásico de Sebastián Cordero es imposible de ignorar.</p>
+            <p>Ratas, ratones, rateros es una mirada dura a la marginalidad urbana. Sigue a Salvador, un joven atrapado en una vida de pequeños delitos, cuya existencia se descontrola aún más con la llegada de un primo problemático.</p>
+            <p>No es una película cómoda. Y no intenta serlo. Lo interesante es que no romantiza la pobreza ni la delincuencia, pero tampoco cae en el juicio fácil. Más bien muestra un entorno donde las oportunidades son limitadas y las decisiones, muchas veces, vienen condicionadas por la supervivencia.</p>
+            <p>Para muchos, esta es la película que puso al cine ecuatoriano en el mapa internacional. Y honestamente, sigue siendo igual de relevante hoy.</p>
+          </div>
+        </div>
+
+        <!-- Película 3 -->
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:start; margin:32px 0; padding:24px; background:#fafafa; border-left:4px solid #FF8C42;">
+          <div style="width:140px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:40px; overflow:hidden; flex-shrink:0;">🎣
+            <!-- <img src="images/pescador.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          </div>
+          <div>
+            <p><strong>Pescador (2011)</strong></p>
+            <p>Otra de Sebastián Cordero, pero con un tono completamente distinto.</p>
+            <p>Pescador cuenta la historia de un hombre en la costa ecuatoriana cuya vida cambia cuando encuentra paquetes de droga flotando en el mar. Lo que sigue no es una típica historia de crimen, sino algo más introspectivo.</p>
+            <p>La película se toma su tiempo, observa más de lo que explica, y en ese silencio construye una reflexión sobre ambición, tentación y destino.</p>
+            <p>Además, tiene algo que muchas producciones locales logran muy bien: capturar el entorno. La costa no es solo un escenario, es parte del relato.</p>
+            <p>Si buscas una película que se sienta más contemplativa que narrativa, esta es una gran opción.</p>
+          </div>
+        </div>
+
+        <!-- Película 4 -->
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:start; margin:32px 0; padding:24px; background:#fafafa; border-left:4px solid #FF8C42;">
+          <div style="width:140px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:40px; overflow:hidden; flex-shrink:0;">🌿
+            <!-- <img src="images/alba.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          </div>
+          <div>
+            <p><strong>Alba (2016)</strong></p>
+            <p>Alba es probablemente una de las películas más delicadas del cine ecuatoriano reciente.</p>
+            <p>La historia gira en torno a una niña introvertida que debe vivir con su padre, con quien casi no tiene relación. A partir de ahí, la película construye un retrato íntimo sobre la soledad, la incomodidad social y el proceso de crecer.</p>
+            <p>No hay grandes eventos. No hay dramatismo exagerado. Todo se construye a partir de silencios, miradas y pequeños gestos. Es una película que confía en el espectador, que no explica de más, y que logra algo difícil: transmitir emociones complejas con muy poco.</p>
+            <p>Es cine minimalista, pero muy potente.</p>
+          </div>
+        </div>
+
+        <!-- Película 5 -->
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:24px; align-items:start; margin:32px 0; padding:24px; background:#fafafa; border-left:4px solid #FF8C42;">
+          <div style="width:140px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:40px; overflow:hidden; flex-shrink:0;">🏙️
+            <!-- <img src="images/sin-muertos.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+          </div>
+          <div>
+            <p><strong>Sin muertos no hay carnaval (2016)</strong></p>
+            <p>Volvemos a un tono más tenso con esta película, también de Sebastián Cordero.</p>
+            <p>Aquí el foco está en la lucha por la tierra, la desigualdad y las tensiones sociales en Guayaquil. Todo arranca con una invasión de terrenos, pero rápidamente escala a un conflicto mucho más amplio.</p>
+            <p>La película tiene una energía distinta: es más caótica, más intensa, más política.</p>
+            <p>Y quizá eso la hace especialmente relevante. Porque no se queda en lo individual, sino que apunta a estructuras más grandes: poder, corrupción, desigualdad.</p>
+            <p>Es una de esas películas que no solo cuentan una historia, sino que incomodan un poco. Y eso también es necesario.</p>
+          </div>
+        </div>
+
+        <p><strong>Entonces… ¿por qué ver cine ecuatoriano?</strong></p>
+        <p>No se trata de dejar de ver películas extranjeras. Eso sería absurdo. El cine es global por naturaleza. Pero sí vale la pena cuestionar por qué casi nunca miramos hacia lo nuestro.</p>
+        <p>El cine ecuatoriano no tiene los mismos presupuestos ni la misma maquinaria de distribución que Hollywood o incluso otros países de la región. Pero eso no significa que tenga menos valor. Muchas veces, lo que le falta en recursos lo compensa con autenticidad.</p>
+        <p>Estas cinco películas muestran algo en común: no intentan copiar modelos externos. Más bien, cuentan historias desde su propio contexto, con sus propias voces.</p>
+        <p>Y eso, en un mundo donde todo empieza a sentirse igual, tiene bastante peso.</p>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ═══ FOOTER ═══ -->
   <footer>
@@ -1772,7 +2035,6 @@ Y eso basta.</div>
         <li>Arte Vivo</li>
         <li>Letras que Laten</li>
         <li>Sonido DAB</li>
-        <li>Team DAB · Mente DAB</li>
         <li>Detrás del Telón</li>
       </ul>
     </div>

@@ -1810,12 +1810,14 @@ Y eso basta.</div>
 
     <!-- 3 image placeholders: 1 cuadrado + 2 rectángulos horizontales -->
     <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:12px; padding:32px 60px 0; background:#0a0a0a;">
-      <img src="images/soulcore-foto1.png" style="width:100%;height:100%;object-fit:cover;">         <!-- Para reemplazar: <img src="images/soulcore-foto1.png" style="width:100%;height:100%;object-fit:cover;"> -->
+      <div style="grid-column:1; grid-row:1 / 3; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:1/1; overflow:hidden;">
+        <img src="images/soulcore-foto1.png" style="width:100%; height:100%; object-fit:cover;">    <!-- Para reemplazar: <img src="images/soulcore-foto1.png" style="width:100%;height:100%;object-fit:cover;"> -->
       </div>
-      <img src="images/soulcore-foto2.png" style="width:100%;height:100%;object-fit:cover;"> 
-        <!-- Para reemplazar: <img src="images/soulcore-foto2.png" style="width:100%;height:100%;object-fit:cover;"> -->
+      <div style="grid-column:2; grid-row:1; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:16/9; overflow:hidden;">
+        <img src="images/soulcore-foto2.jpg" style="width:100%; height:100%; object-fit:cover;">
       </div>
-      <img src="images/soulcore-foto3.png" style="width:100%;height:100%;object-fit:cover;"> -->        <!-- Para reemplazar: <img src="images/soulcore-foto3.png" style="width:100%;height:100%;object-fit:cover;"> -->
+      <div style="grid-column:2; grid-row:2; background:#1a1a1a; border:2px solid #333; border-radius:4px; aspect-ratio:16/9; overflow:hidden;">
+       <img src="images/soulcore-foto3.jpg" style="width:100%; height:100%; object-fit:cover;">
       </div>
     </div>
     <p style="font-size:10px; color:#555; padding:6px 60px 0; font-style:italic; background:#0a0a0a;">Imágenes: archivo del artista</p>
@@ -1885,20 +1887,20 @@ Y eso basta.</div>
     <div style="padding:24px 60px 0; background:#fff;">
       <p style="font-size:10px; color:#999; font-style:italic; margin-bottom:10px;">Imágenes: IMDb · Solo para uso editorial / referencia</p>
       <div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:10px;">
-        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">📺
-          <!-- <img src="images/st-img1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; overflow:hidden;">
+          <img src="images/st-img1.png" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">👾
-          <!-- <img src="images/st-img2.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; overflow:hidden;">
+          <img src="images/st-img2.png" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🌀
-          <!-- <img src="images/st-img3.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; overflow:hidden;">
+          <img src="images/st-img3.png" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🔦
-          <!-- <img src="images/st-img4.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; overflow:hidden;">
+          <img src="images/st-img4.png" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:36px; overflow:hidden;">🎭
-          <!-- <img src="images/st-img5.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+        <div style="flex-shrink:0; width:130px; aspect-ratio:2/3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; overflow:hidden;">
+          <img src="images/st-img5.png" style="width:100%; height:100%; object-fit:cover;">
         </div>
       </div>
     </div>

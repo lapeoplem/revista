@@ -29,7 +29,7 @@
 
   /* ─── PORTADA ──────────────────────────────── */
   .cover {
-    min-height: 100dvh;
+    min-height: 100vh;
     background: #ffffff;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -821,16 +821,17 @@
   }
 
   .poem-columns {
-     display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
   }
 
   .poem-text {
     font-family: 'DM Serif Display', serif;
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 2;
     color: var(--black);
-    white-space: normal;
-    margin-bottom: 20px;
+    white-space: pre-line;
   }
 
   /* ─── CUENTO ───────────────────────────────── */
@@ -1159,14 +1160,11 @@
     color: rgba(255,255,255,0.25);
     letter-spacing: 0.1em;
   }
-}
+
 </style>
 </head>
 <body>
-   
-    <div style="background:#FFE228;color:#000;padding:10px;text-align:center;font-weight:bold;">
-    Abre en tu navegador de confianza para mejor experiencia
-    </div>
+
 <!-- NAVEGACIÓN -->
 <nav>
   <div class="nav-logo">LA <span>PEOPLE</span> HABLA</div>

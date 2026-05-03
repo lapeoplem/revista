@@ -1085,9 +1085,57 @@
     color: rgba(255,255,255,0.55);
   }
 
-  /* ─── RESPONSIVE MÓVIL ─────────────────────── */
+  /* ─── PISTACHOS IMAGE GRID ─────────────────── */
+  .pistachos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 32px 60px 0;
+    background: #fff;
+  }
+  .pistachos-img-sq {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background: #e8e8e8;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+  }
+  .pistachos-img-rect {
+    grid-column: 2;
+    background: #e8e8e8;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ─── CONTENTS ITEMS CLICKABLE ─────────────── */
+  .contents-item {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s, transform 0.15s;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 40px 60px;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    border-right: 2px solid rgba(0,0,0,0.08);
+  }
+  .contents-item:hover {
+    background: rgba(43,91,255,0.06);
+    transform: translateY(-2px);
+  }
+  .contents-item:nth-child(2n) { border-right: none; }
+
+
   @media (max-width: 768px) {
 
+    .pistachos-grid { grid-template-columns: 1fr; padding: 24px; }
+    .pistachos-img-sq { grid-column: 1; grid-row: auto; aspect-ratio: 16/9; }
+    .pistachos-img-rect { grid-column: 1; aspect-ratio: 16/9; }
     /* Nav */
     nav { padding: 0 16px; }
     .nav-links { display: none; }
@@ -1271,7 +1319,7 @@
       <div class="contents-title">CON<span>TENIDOS</span></div>
     </div>
     <div class="contents-grid reveal-stagger">
-      <div class="contents-item">
+      <a href="#voz" class="contents-item" style="text-decoration:none; color:inherit;">
         <div class="contents-num">1</div>
         <div class="contents-info">
           <div class="contents-section-name"><span class="contents-section-color" style="background:var(--blue)"></span>La Voz de la People</div>
@@ -1280,8 +1328,8 @@
             <span class="contents-tag">Opinión</span>
           </div>
         </div>
-      </div>
-      <div class="contents-item">
+      </a>
+      <a href="#arte" class="contents-item" style="text-decoration:none; color:inherit;">
         <div class="contents-num">2</div>
         <div class="contents-info">
           <div class="contents-section-name"><span class="contents-section-color" style="background:var(--purple)"></span>Arte Vivo</div>
@@ -1291,8 +1339,8 @@
             <span class="contents-tag">Fotografía</span>
           </div>
         </div>
-      </div>
-      <div class="contents-item">
+      </a>
+      <a href="#letras" class="contents-item" style="text-decoration:none; color:inherit;">
         <div class="contents-num">3</div>
         <div class="contents-info">
           <div class="contents-section-name"><span class="contents-section-color" style="background:var(--red)"></span>Letras que Laten</div>
@@ -1302,8 +1350,8 @@
             <span class="contents-tag">Cuento</span>
           </div>
         </div>
-      </div>
-      <div class="contents-item">
+      </a>
+      <a href="#sonido" class="contents-item" style="text-decoration:none; color:inherit;">
         <div class="contents-num">4</div>
         <div class="contents-info">
           <div class="contents-section-name"><span class="contents-section-color" style="background:var(--yellow); border:1px solid #ccc;"></span>Sonido DAB</div>
@@ -1313,8 +1361,8 @@
             <span class="contents-tag">Entrevista · Soulcore</span>
           </div>
         </div>
-      </div>
-      <div class="contents-item">
+      </a>
+      <a href="#telon" class="contents-item" style="text-decoration:none; color:inherit;">
         <div class="contents-num">5</div>
         <div class="contents-info">
           <div class="contents-section-name"><span class="contents-section-color" style="background:#FF8C42"></span>Detrás del Telón</div>
@@ -1324,7 +1372,7 @@
             <span class="contents-tag">Recomendación · Cine Ecuatoriano</span>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -1643,7 +1691,7 @@ sus engaños.</div>
     <div class="poem-card reveal">
       <div class="poem-title" style="color:var(--coral)">¿Qué Hubiera Pasado?</div>
       <div class="poem-author-badge tag-black">Santiago Torres</div>
-      <div class="poem-columns">
+      <div style="display:flex; flex-direction:column; gap:0; max-width:700px; margin:0 auto;">
         <div class="poem-text">¿Qué hubiera pasado
 si ese día no levantaba la mirada?
 Si me quedaba viendo el suelo,
@@ -1800,8 +1848,8 @@ Y luego la decisión
 de no huir cuando se volvió real.
 
 Porque lo real
-no siempre es sencillo.</div>
-        <div class="poem-text">Lo real implica miedos,
+no siempre es sencillo.
+Lo real implica miedos,
 malentendidos,
 días en los que no sabemos
 cómo explicar lo que sentimos.
@@ -2014,16 +2062,16 @@ justo cuando menos lo esperabas.</div>
     </div>
 
     <!-- 3 image placeholders: 1 cuadrado + 2 rectángulos horizontales -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:12px; padding:32px 60px 0; background:#fff;">
-      <div style="grid-column:1; grid-row:1 / 3; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:1/1; overflow:hidden;">
+    <div class="pistachos-grid">
+      <div class="pistachos-img-sq" style="overflow:hidden;">
         <img src="images/pistachos-foto1.png" style="width:100%; height:100%; object-fit:cover;">
-      </div>       <!-- Para reemplazar: <img src="images/pistachos-foto1.png" style="width:100%;height:100%;object-fit:cover;"> -->
-      <div style="grid-column:2; grid-row:1; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:16/9; overflow:hidden;">
+      </div>
+      <div class="pistachos-img-rect" style="overflow:hidden;">
         <img src="images/pistachos-foto2.png" style="width:100%; height:100%; object-fit:cover;">
-      </div>       <!-- Para reemplazar: <img src="images/pistachos-foto2.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
-      <div style="grid-column:2; grid-row:2; background:#e8e8e8; border:2px solid #ccc; border-radius:4px; aspect-ratio:16/9; overflow:hidden;">
+      </div>
+      <div class="pistachos-img-rect" style="overflow:hidden;">
         <img src="images/pistachos-foto3.png" style="width:100%; height:100%; object-fit:cover;">
-      </div>       <!-- Para reemplazar: <img src="images/pistachos-foto3.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+      </div>
     </div>
     <p style="font-size:10px; color:#aaa; padding:6px 60px 0; font-style:italic;">Imágenes: archivo de la banda</p>
 
@@ -2355,7 +2403,7 @@ justo cuando menos lo esperabas.</div>
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
 
   revealElements.forEach(el => observer.observe(el));
 
